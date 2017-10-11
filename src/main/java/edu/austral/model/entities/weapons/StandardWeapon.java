@@ -10,8 +10,8 @@ public class StandardWeapon extends Weapon{
     }
 
     @Override
-    protected Shot[] trigger(Player player) {
-        // TODO implement trigger
+    public Shot[] shoot(Player player) {
+        // TODO implement shoot
         throw new UnsupportedOperationException("Not implemented yet");
     }
 

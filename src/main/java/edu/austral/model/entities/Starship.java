@@ -6,11 +6,11 @@ import edu.austral.util.Vector2;
 
 import java.awt.*;
 
-public class Spaceship extends Entity {
+public class Starship extends Entity {
 
     private Weapon weapon;
 
-    public Spaceship(Shape shape, Vector2 position, Vector2 direction, float speed, Weapon weapon) {
+    public Starship(Shape shape, Vector2 position, Vector2 direction, float speed, Weapon weapon) {
         super(shape, position, direction, speed);
         this.weapon = weapon;
     }
@@ -21,8 +21,7 @@ public class Spaceship extends Entity {
     }
 
     public Shot[] shoot(Player player){
-        // TODO implement shoot
-        throw new UnsupportedOperationException("Not implemented yet");
+        return weapon.shoot(player);
     }
 
     public Weapon changeWeapon(Weapon weapon){

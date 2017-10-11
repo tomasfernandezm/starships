@@ -16,7 +16,7 @@ public abstract class Weapon {
         this.timer = timer;
     }
 
-    protected abstract Shot[] trigger(Player player);
+    public abstract Shot[] shoot(Player player);
 
     public boolean canShoot(){
         return capacity > 0;

@@ -10,8 +10,8 @@ public class TripleWeapon extends Weapon{
     }
 
     @Override
-    protected Shot[] trigger(Player player) {
-        // TODO implement trigger
+    protected Shot[] shoot(Player player) {
+        // TODO implement shoot
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
