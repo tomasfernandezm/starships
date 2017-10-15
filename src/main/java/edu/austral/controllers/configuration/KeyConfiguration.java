@@ -1,13 +1,13 @@
 package edu.austral.controllers.configuration;
 
-import java.awt.event.KeyEvent;
+import java.util.HashMap;
 import java.util.Map;
 
 public class KeyConfiguration {
 
-    public Map<KeyEvent, EnumAction> actionMap;
+    public Map<Integer, EnumAction> actionMap = new HashMap<>();
 
-    protected void parseFile(){
-
+    KeyConfiguration(Map<Integer, EnumAction> actionMap){
+        this.actionMap = actionMap;
     }
 }

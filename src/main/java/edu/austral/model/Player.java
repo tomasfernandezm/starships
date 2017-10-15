@@ -3,15 +3,23 @@ package edu.austral.model;
 import edu.austral.model.entities.Shot;
 import edu.austral.model.entities.Starship;
 
+import java.util.List;
+
 public class Player {
 
     private final String name;
-    private final String number;
+    private final int number;
     private int score = 0;
     private Starship ship;
     private boolean alive = true;
 
-    public Player(String name, String number, Starship spaceship) {
+    public Player(String name, int number){
+        this.name = name;
+        this.number = number;
+        // TODO create ship
+    }
+
+    public Player(String name, int number, Starship spaceship) {
         this.name = name;
         this.number = number;
         this.ship = spaceship;
@@ -25,11 +33,15 @@ public class Player {
         ship.rotate(angle);
     }
 
-    public void move(){
+    public void moveForward(){
         ship.move();
     }
 
-    public Shot[] shoot(){
+    public void moveBackwards(){
+        ship.moveBackwards();
+    }
+
+    public List<Shot> shoot(){
         return ship.shoot(this);
     }
 }

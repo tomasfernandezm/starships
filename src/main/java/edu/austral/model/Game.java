@@ -1,8 +1,7 @@
 package edu.austral.model;
 
-import edu.austral.model.calculators.ScoreCalculator;
-import edu.austral.model.collision.CollisionEngine;
 import edu.austral.model.entities.Entity;
+import edu.austral.util.CollisionEngine;
 
 import java.util.List;
 
@@ -22,8 +21,25 @@ public class Game {
     private List<Entity> entities;
     private Map map;
     private CollisionEngine collisionEngine;
-    private ScoreCalculator scoreCalculator;
     private Graveyard graveyard;
 
+    public List<Player> getPlayerList() {
+        return playerList;
+    }
 
+    public List<Entity> getEntities() {
+        return entities;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public CollisionEngine getCollisionEngine() {
+        return collisionEngine;
+    }
+
+    public Graveyard getGraveyard() {
+        return graveyard;
+    }
 }

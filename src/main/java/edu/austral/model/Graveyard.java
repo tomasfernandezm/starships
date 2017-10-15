@@ -8,10 +8,12 @@ import java.util.List;
 public class Graveyard {
 
     private List<Entity> entities = new ArrayList<>();
-    private int amount = 0;
 
     public void addToGraveyard(Entity entity){
         entities.add(entity);
-        amount++;
+    }
+
+    public List<Entity> getEntities() {
+        return entities;
     }
 }

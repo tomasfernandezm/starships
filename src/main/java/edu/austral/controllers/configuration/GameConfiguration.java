@@ -8,6 +8,6 @@ public class GameConfiguration {
     public Map<Integer, String> playerNames;
 
     protected void parseFile(){
-
+        // TODO implement
     }
 }

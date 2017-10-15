@@ -1,8 +1,7 @@
 package edu.austral;
 
 import processing.core.PApplet;
-
-import java.awt.event.KeyEvent;
+import processing.event.KeyEvent;
 
 public abstract class GameFramework extends PApplet {
 
@@ -22,5 +21,4 @@ public abstract class GameFramework extends PApplet {
     public abstract void draw(float time, PApplet graphics);
 
     public abstract void keyPressed(KeyEvent event);
-
 }

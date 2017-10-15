@@ -4,5 +4,5 @@ import processing.core.PGraphics;
 
 public interface Drawable {
 
-    PGraphics getGraphics();
+    void render();
 }

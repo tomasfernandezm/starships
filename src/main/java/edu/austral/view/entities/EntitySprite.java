@@ -1,24 +1,19 @@
 package edu.austral.view.entities;
 
 import edu.austral.model.entities.Entity;
+import processing.core.PApplet;
 import processing.core.PGraphics;
 
-public class EntitySprite implements Drawable {
+public abstract class EntitySprite implements Drawable {
 
-    protected final PGraphics graphics;
-    private final Entity entity;
+    protected final Entity entity;
+    protected final PApplet sketch;
 
-    public EntitySprite(Entity entity) {
+    public EntitySprite(PApplet sketch, Entity entity) {
         this.entity = entity;
-        graphics = setup();
-    }
-
-    protected PGraphics setup(){
-        return new PGraphics();
+        this.sketch = sketch;
     }
 
     @Override
-    public PGraphics getGraphics() {
-        return graphics;
-    }
+    public abstract void render();
 }
