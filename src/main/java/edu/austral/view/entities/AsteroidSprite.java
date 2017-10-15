@@ -6,12 +6,12 @@ import processing.core.PApplet;
 
 public class AsteroidSprite extends EntitySprite{
 
-    public AsteroidSprite(PApplet sketch, Entity entity) {
-        super(sketch, entity);
+    public AsteroidSprite(Entity entity) {
+        super(entity);
     }
 
     @Override
-    public void render() {
+    public void render(PApplet sketch) {
         sketch.ellipse(entity.getPosition().x(), entity.getPosition().y(),
                 entity.getShape().getBounds().height, entity.getShape().getBounds().width);
     }

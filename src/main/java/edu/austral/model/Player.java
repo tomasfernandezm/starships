@@ -16,13 +16,16 @@ public class Player {
     public Player(String name, int number){
         this.name = name;
         this.number = number;
-        // TODO create ship
     }
 
     public Player(String name, int number, Starship spaceship) {
         this.name = name;
         this.number = number;
         this.ship = spaceship;
+    }
+
+    public Starship getShip(){
+        return ship;
     }
 
     public void addToScore(int toAdd){

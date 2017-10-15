@@ -19,7 +19,7 @@ public class Game {
 
     private List<Player> playerList;
     private List<Entity> entities;
-    private Map map;
+    private Map map = new Map(500, 500);
     private CollisionEngine collisionEngine;
     private Graveyard graveyard;
 

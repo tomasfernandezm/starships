@@ -7,13 +7,15 @@ import processing.core.PGraphics;
 public abstract class EntitySprite implements Drawable {
 
     protected final Entity entity;
-    protected final PApplet sketch;
 
-    public EntitySprite(PApplet sketch, Entity entity) {
+    public EntitySprite(Entity entity) {
         this.entity = entity;
-        this.sketch = sketch;
+    }
+
+    public boolean represents(Entity entity){
+        return this.entity.equals(entity);
     }
 
     @Override
-    public abstract void render();
+    public abstract void render(PApplet sketch);
 }

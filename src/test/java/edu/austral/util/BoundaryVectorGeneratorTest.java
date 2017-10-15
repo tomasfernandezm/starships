@@ -1,5 +1,6 @@
 package edu.austral.util;
 
+import edu.austral.util.generator.BoundaryVectorGenerator;
 import org.junit.Test;
 
 import java.util.List;

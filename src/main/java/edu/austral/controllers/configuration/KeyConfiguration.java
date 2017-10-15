@@ -7,7 +7,7 @@ public class KeyConfiguration {
 
     public Map<Integer, EnumAction> actionMap = new HashMap<>();
 
-    KeyConfiguration(Map<Integer, EnumAction> actionMap){
+    public KeyConfiguration(Map<Integer, EnumAction> actionMap){
         this.actionMap = actionMap;
     }
 }

@@ -1,10 +1,12 @@
-package edu.austral.util;
+package edu.austral.util.generator;
+
+import edu.austral.util.Vector2;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BoundaryVectorGenerator {
+public class BoundaryVectorGenerator implements Generator<Vector2>{
 
     private Random random = new Random();
 

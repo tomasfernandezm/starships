@@ -1,5 +1,6 @@
 package edu.austral.model.entities;
 
+import edu.austral.model.Constants;
 import edu.austral.model.Player;
 import edu.austral.model.entities.weapons.StandardWeapon;
 import edu.austral.model.entities.weapons.Weapon;
@@ -13,9 +14,9 @@ public class Starship extends Entity {
     private Weapon weapon;
     private float collisionDamage;
 
-    Starship(float life, Vector2 position, Vector2 direction, float speed) {
+    public Starship(float life, Vector2 position, Vector2 direction, float speed) {
         super(life, position, direction, speed);
-        this.shape = new Rectangle2D.Float(position.x(), position.y(), 50, 50);
+        this.shape = new Rectangle2D.Float(position.x(), position.y(), Constants.STARSHIP_HEIGHT, Constants.STARSHIP_WIDTH);
         this.weapon = new StandardWeapon();
         this.collisionDamage = life/10;
     }
@@ -37,7 +38,7 @@ public class Starship extends Entity {
     }
 
     public void moveBackwards(){
-        position = position.$minus(direction);
+        position = position.$minus(direction.$times(speed));
     }
 
     public void rotate(float angle){

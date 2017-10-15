@@ -6,12 +6,12 @@ import processing.core.PApplet;
 
 public class ShotSprite extends EntitySprite{
 
-    public ShotSprite(PApplet sketch, Entity entity) {
-        super(sketch, entity);
+    public ShotSprite(Entity entity) {
+        super(entity);
     }
 
     @Override
-    public void render() {
+    public void render(PApplet sketch) {
         sketch.rect(entity.getPosition().x(), entity.getPosition().y(),
                 entity.getShape().getBounds().height, entity.getShape().getBounds().width);
     }

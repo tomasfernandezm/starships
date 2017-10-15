@@ -13,8 +13,22 @@ public class Map {
         this.yLength = yLength;
     }
 
-    boolean canMove(Entity entity){
-        Vector2 position = entity.getPosition().$plus(entity.getDirection().$times(entity.getSpeed()));
-        return position.x() > xLength || position.y() > yLength;
+    public boolean isInMap(Vector2 vector){
+        boolean moveInX = vector.x() < xLength && vector.x() > 0;
+        boolean moveInY = vector.y() < yLength && vector.y() > 0;
+        return moveInX && moveInY;
+    }
+
+    public boolean canMoveForward(Entity entity){
+        return canMove(entity, 1);
+    }
+
+    public boolean canMoveBackwards(Entity entity){
+        return canMove(entity, -1);
+    }
+
+    private boolean canMove(Entity entity, int direction){
+        Vector2 position = entity.getPosition().$plus(entity.getDirection().$times(entity.getSpeed()*direction));
+        return isInMap(position);
     }
 }

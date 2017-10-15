@@ -1,14 +1,27 @@
 package edu.austral.controllers;
 
+import edu.austral.GameController;
+import edu.austral.GameFramework;
 import edu.austral.model.Game;
 import edu.austral.model.entities.Shot;
+import edu.austral.view.entities.ShotSprite;
+import processing.core.PApplet;
 
 import java.util.List;
 
 public class ShotController {
 
-    public void shotFired(List<Shot> shots){
+    PApplet sketch;
+
+    public ShotController(PApplet sketch) {
+        this.sketch = sketch;
+    }
+
+    void shotFired(List<Shot> shots){
         Game.getINSTANCE().getEntities().addAll(shots);
-        // TODO también agregar en el view
+        for(Shot s: shots){
+            ShotSprite shotSprite = new ShotSprite(s);
+            GameController.INSTANCE.view.add(shotSprite);
+        }
     }
 }
