@@ -4,6 +4,7 @@ import edu.austral.util.Collisionable;
 import edu.austral.util.Vector2;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 
 public abstract class Entity implements Collisionable<Entity>{
 
@@ -46,7 +47,12 @@ public abstract class Entity implements Collisionable<Entity>{
     }
 
     public void move(){
+
+        AffineTransform affineTransform = new AffineTransform();
         position = position.$plus(direction.$times(speed));
+        affineTransform.translate(direction.x()*speed, direction.y()*speed);
+        shape = affineTransform.createTransformedShape(shape);
+
     }
 
     public boolean isAlive(){

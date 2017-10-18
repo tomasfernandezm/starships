@@ -51,8 +51,7 @@ public class LevelController {
         Vector2 position = boundaryVectorGenerator.generate(xDimension, yDimension);
         Asteroid asteroid = new Asteroid(position, position.$times(-1).unitary(),1, size);
         view.add(new AsteroidSprite(asteroid));
-        Game.getINSTANCE().getEntities().add(asteroid);
-        System.out.println("Created Asteroid");
+        Game.getINSTANCE().addEntity(asteroid);
         setNewTimerInterval(asteroidTimer, averageMillisBetweenAsteroidSpawn);
     }
 
@@ -60,9 +59,8 @@ public class LevelController {
         Vector2 position = boundaryVectorGenerator.generate(xDimension, yDimension);
         FWeapon weapon = new FWeapon(100, position, position.$times(-1).unitary(), 1);
         view.add(new FWeaponSprite(weapon));
-        Game.getINSTANCE().getEntities().add(weapon);
+        Game.getINSTANCE().addEntity(weapon);
         setNewTimerInterval(weaponTimer, averageMillisBetweenWeaponSpawn);
-        System.out.println("Created Weapon");
     }
 
     private void setNewTimerInterval(Timer timer, double mean){

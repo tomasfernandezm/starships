@@ -12,8 +12,8 @@ import java.util.List;
 public class ShotController {
 
     void shotFired(List<Shot> shots){
-        Game.getINSTANCE().getEntities().addAll(shots);
         for(Shot s: shots){
+            Game.getINSTANCE().addEntity(s);
             ShotSprite shotSprite = new ShotSprite(s);
             GameController.INSTANCE.view.add(shotSprite);
         }

@@ -1,6 +1,7 @@
 package edu.austral.model;
 
 import edu.austral.model.entities.Entity;
+import edu.austral.model.entities.EntityEnum;
 import edu.austral.util.CollisionEngine;
 import edu.austral.view.View;
 import scala.collection.JavaConverters;
@@ -25,11 +26,11 @@ public class Game {
     private Game(){ }
 
     public void iterate(){
-        moveEntities();
         checkCollisions();
         sendToGraveyard();
         removeGraveyardEntitiesFromGame();
         graveyard.empty();
+        moveEntities();
     }
 
     private void moveEntities(){
@@ -44,9 +45,7 @@ public class Game {
 
     private void sendToGraveyard(){
         for(Entity e: entities){
-            if(!e.isAlive()) {
-                graveyard.addToGraveyard(e);
-            }
+            if(!e.isAlive()) graveyard.addToGraveyard(e);
         }
     }
 
@@ -57,12 +56,14 @@ public class Game {
         }
     }
 
-    public void addView(View view){
-        this.view = view;
+    public void addEntity(Entity e){
+        if(e.getType().equals(EntityEnum.SHOT)) {
+            entities.add(e);
+        }
     }
 
-    public List<Entity> getEntities() {
-        return entities;
+    public void addView(View view){
+        this.view = view;
     }
 
     public Map getMap() {
