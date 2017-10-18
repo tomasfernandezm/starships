@@ -9,11 +9,15 @@ public class Graveyard {
 
     private List<Entity> entities = new ArrayList<>();
 
-    public void addToGraveyard(Entity entity){
+    void addToGraveyard(Entity entity){
         entities.add(entity);
     }
 
     public List<Entity> getEntities() {
         return entities;
+    }
+
+    void empty(){
+        entities.clear();
     }
 }

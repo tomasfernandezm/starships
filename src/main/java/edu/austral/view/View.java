@@ -1,16 +1,23 @@
 package edu.austral.view;
 
+import edu.austral.controllers.configuration.EnumAction;
 import edu.austral.model.entities.Entity;
+import edu.austral.model.entities.EntityEnum;
 import edu.austral.view.entities.Drawable;
 import processing.core.PApplet;
+import processing.core.PImage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
+import static edu.austral.model.entities.EntityEnum.STARSHIP;
 
 public class View {
 
     private final List<Drawable> drawables = new ArrayList<>();
+
+    public View(){
+
+    }
 
     public void add(Drawable drawable){
         drawables.add(drawable);

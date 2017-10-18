@@ -14,12 +14,17 @@ public class TripleWeapon extends Weapon{
     }
 
     @Override
-    public List<Shot> shoot(Player player, Starship starship) {
+    public List<Shot> shootW(Player player, Starship starship) {
         List<Shot> result = new LinkedList<>();
         if(!timer.canOperate()) return result;
         else {
             // TODO think creation logic
             return result;
         }
+    }
+
+    @Override
+    public boolean hasCapacity() {
+        return capacity >= 3;
     }
 }

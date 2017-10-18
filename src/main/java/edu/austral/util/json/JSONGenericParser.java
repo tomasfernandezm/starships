@@ -1,4 +1,4 @@
-package edu.austral.controllers.configuration;
+package edu.austral.util.json;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -7,12 +7,11 @@ import com.google.gson.stream.JsonReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
-public class JSONConfigurationParser<T> {
+public class JSONGenericParser<T> {
 
-    public List<T> getConfig(String path){
+    public List<T> read(String path){
         Gson gson = new Gson();
         List<T> result;
         try {

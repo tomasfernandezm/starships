@@ -21,4 +21,9 @@ public class RandomVectorGenerator implements Generator<Vector2>{
         }
         return result;
     }
+
+    @Override
+    public Vector2 generate(int xLength, int yLength) {
+        return null;
+    }
 }

@@ -31,7 +31,7 @@ public class PositionPlayerGenerator implements Generator<Vector2>{
         return result;
     }
 
-    private Vector2 generate(int xBound, int yBound){
+    public Vector2 generate(int xBound, int yBound){
         int xCoor = random.nextInt(xBound);
         int yCoor = random.nextInt(yBound);
         return new Vector2(xCoor, yCoor);

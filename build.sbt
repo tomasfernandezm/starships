@@ -14,3 +14,6 @@ libraryDependencies += "junit" % "junit" % "4.12" % "test"
 libraryDependencies += "org.assertj" % "assertj-core" % "3.8.0" % "test"
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
 libraryDependencies += "com.google.code.gson" % "gson" % "2.8.2"
+// https://mvnrepository.com/artifact/org.apache.commons/commons-math3
+libraryDependencies += "org.apache.commons" % "commons-math3" % "3.2"
+

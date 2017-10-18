@@ -7,10 +7,10 @@
 		revision="0.1"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20171014195908"/>
+		date="20171018124426"/>
 	<dependencies>
 		<module organisation="org.assertj" name="assertj-core">
-			<revision name="3.8.0" status="release" pubdate="20170520234949" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="11">
+			<revision name="3.8.0" status="release" pubdate="20170520234949" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="5678" time="0" location="/home/toams/.ivy2/cache/org.assertj/assertj-core/ivy-3.8.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/assertj/assertj-core/3.8.0/assertj-core-3.8.0.pom"/>
 				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="3.8.0" rev-constraint-default="3.8.0" rev-constraint-dynamic="3.8.0" callerrev="0.1"/>
@@ -22,7 +22,7 @@
 			</revision>
 		</module>
 		<module organisation="org.processing" name="core">
-			<revision name="3.2.3" status="release" pubdate="20161110174143" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
+			<revision name="3.2.3" status="release" pubdate="20161110174143" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="10">
 				<license name="GPLv2 with Classpath exception" url="http://www.gnu.org/software/classpath/license.html"/>
 				<metadata-artifact status="no" details="" size="4579" time="0" location="/home/toams/.ivy2/cache/org.processing/core/ivy-3.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/processing/core/3.2.3/core-3.2.3.pom"/>
 				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="3.2.3" rev-constraint-default="3.2.3" rev-constraint-dynamic="3.2.3" callerrev="0.1"/>
@@ -34,19 +34,19 @@
 			</revision>
 		</module>
 		<module organisation="com.google.code.gson" name="gson">
-			<revision name="2.8.2" status="release" pubdate="20170919224242" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
+			<revision name="2.8.2" status="release" pubdate="20170919224242" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
 				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3598" time="0" location="/home/toams/.ivy2/cache/com.google.code.gson/gson/ivy-2.8.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom"/>
 				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="2.8.2" rev-constraint-default="2.8.2" rev-constraint-dynamic="2.8.2" callerrev="0.1"/>
 				<artifacts>
-					<artifact name="gson" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="147855" time="1990" location="/home/toams/.ivy2/cache/com.google.code.gson/gson/srcs/gson-2.8.2-sources.jar">
+					<artifact name="gson" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="147855" time="0" location="/home/toams/.ivy2/cache/com.google.code.gson/gson/srcs/gson-2.8.2-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="junit" name="junit">
-			<revision name="4.12" status="release" pubdate="20141204131743" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
+			<revision name="4.12" status="release" pubdate="20141204131743" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="13">
 				<license name="Eclipse Public License 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
 				<metadata-artifact status="no" details="" size="3317" time="0" location="/home/toams/.ivy2/cache/junit/junit/ivy-4.12.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.pom"/>
 				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="4.12" rev-constraint-default="4.12" rev-constraint-dynamic="4.12" callerrev="0.1"/>
@@ -58,7 +58,7 @@
 			</revision>
 		</module>
 		<module organisation="org.hamcrest" name="hamcrest-core">
-			<revision name="1.3" status="release" pubdate="20120709180802" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+			<revision name="1.3" status="release" pubdate="20120709180802" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
 				<license name="New BSD License" url="http://www.opensource.org/licenses/bsd-license.php"/>
 				<metadata-artifact status="no" details="" size="2617" time="0" location="/home/toams/.ivy2/cache/org.hamcrest/hamcrest-core/ivy-1.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom"/>
 				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="0.1"/>
@@ -70,7 +70,7 @@
 			</revision>
 		</module>
 		<module organisation="org.jogamp.jogl" name="newt-main">
-			<revision name="2.3.2" status="release" pubdate="20151010114302" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+			<revision name="2.3.2" status="release" pubdate="20151010114302" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
 				<license name="BSD-2 License" url="http://www.opensource.org/licenses/BSD-2-Clause"/>
 				<license name="BSD-3 License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<license name="SGI Free Software License B" url="http://oss.sgi.com/projects/FreeB"/>
@@ -87,7 +87,7 @@
 			</revision>
 		</module>
 		<module organisation="org.jogamp.jogl" name="newt">
-			<revision name="2.3.2" status="release" pubdate="20151010114142" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+			<revision name="2.3.2" status="release" pubdate="20151010114142" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
 				<license name="BSD-2 License" url="http://www.opensource.org/licenses/BSD-2-Clause"/>
 				<license name="BSD-3 License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<license name="SGI Free Software License B" url="http://oss.sgi.com/projects/FreeB"/>
@@ -167,7 +167,7 @@
 			</revision>
 		</module>
 		<module organisation="org.jogamp.jogl" name="nativewindow-main">
-			<revision name="2.3.2" status="release" pubdate="20151010114128" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+			<revision name="2.3.2" status="release" pubdate="20151010114128" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
 				<license name="BSD-2 License" url="http://www.opensource.org/licenses/BSD-2-Clause"/>
 				<license name="BSD-3 License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<license name="SGI Free Software License B" url="http://oss.sgi.com/projects/FreeB"/>
@@ -184,7 +184,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.12.3" status="release" pubdate="20170725074730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.3/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
+			<revision name="2.12.3" status="release" pubdate="20170725074730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.3/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="6">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2471" time="0" location="/home/toams/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.3/scala-library-2.12.3.pom"/>
 				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="2.12.3" rev-constraint-default="2.12.3" rev-constraint-dynamic="2.12.3" callerrev="0.1" extra-info.apiURL="http://www.scala-lang.org/api/2.12.3/"/>
@@ -196,7 +196,7 @@
 			</revision>
 		</module>
 		<module organisation="org.jogamp.jogl" name="jogl">
-			<revision name="2.3.2" status="release" pubdate="20151010113345" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+			<revision name="2.3.2" status="release" pubdate="20151010113345" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/jogl/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
 				<license name="BSD-2 License" url="http://www.opensource.org/licenses/BSD-2-Clause"/>
 				<license name="BSD-3 License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<license name="SGI Free Software License B" url="http://oss.sgi.com/projects/FreeB"/>
@@ -213,7 +213,7 @@
 			</revision>
 		</module>
 		<module organisation="org.jogamp.gluegen" name="gluegen-rt-main">
-			<revision name="2.3.2" status="release" pubdate="20151010112928" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/gluegen/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+			<revision name="2.3.2" status="release" pubdate="20151010112928" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jogamp.org/gluegen/www/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
 				<license name="BSD-2 License" url="http://www.opensource.org/licenses/BSD-2-Clause"/>
 				<license name="BSD-3 License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<license name="BSD-4 License" url="http://www.spdx.org/licenses/BSD-4-Clause"/>
@@ -222,6 +222,18 @@
 				<artifacts>
 					<artifact name="gluegen-rt-main" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="345" time="0" location="/home/toams/.ivy2/cache/org.jogamp.gluegen/gluegen-rt-main/srcs/gluegen-rt-main-2.3.2-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/jogamp/gluegen/gluegen-rt-main/2.3.2/gluegen-rt-main-2.3.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.commons" name="commons-math3">
+			<revision name="3.2" status="release" pubdate="20130402163128" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-math/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="9676" time="0" location="/home/toams/.ivy2/cache/org.apache.commons/commons-math3/ivy-3.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2.pom"/>
+				<caller organisation="default" name="starships$sources_2.12" conf="test, compile, runtime" rev="3.2" rev-constraint-default="3.2" rev-constraint-dynamic="3.2" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="commons-math3" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2005074" time="5763" location="/home/toams/.ivy2/cache/org.apache.commons/commons-math3/srcs/commons-math3-3.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

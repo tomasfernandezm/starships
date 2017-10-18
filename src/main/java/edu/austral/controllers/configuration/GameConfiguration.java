@@ -4,10 +4,13 @@ import java.util.Map;
 
 public class GameConfiguration {
 
-    public int amountOfPlayers;
     public Map<Integer, String> playerNames;
 
-    protected void parseFile(){
-        // TODO implement
+    public int amountOfPlayers(){
+        return playerNames.size();
+    }
+
+    public boolean hasPlayerNames(){
+        return playerNames.size() != 0;
     }
 }

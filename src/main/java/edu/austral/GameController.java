@@ -5,11 +5,18 @@ import edu.austral.controllers.PlayerController;
 import edu.austral.controllers.ShotController;
 import edu.austral.controllers.configuration.EnumAction;
 import edu.austral.controllers.configuration.GameConfiguration;
-import edu.austral.controllers.configuration.JSONConfigurationParser;
-import edu.austral.controllers.configuration.KeyConfiguration;
+import edu.austral.controllers.configuration.lifter.ConfigLifter;
+import edu.austral.controllers.configuration.lifter.GameConfigurationLifter;
+import edu.austral.controllers.configuration.lifter.KeyConfigurationLifter;
+import edu.austral.model.Constants;
+import edu.austral.model.Game;
 import edu.austral.model.Player;
-import edu.austral.util.Timer;
+import edu.austral.util.generator.Generator;
+import edu.austral.util.generator.PositionPlayerGenerator;
+import edu.austral.util.json.JSONGenericParser;
+import edu.austral.controllers.configuration.KeyConfiguration;
 import edu.austral.util.Vector2;
+import edu.austral.view.ImageContainer;
 import edu.austral.view.View;
 import processing.core.PApplet;
 import processing.event.KeyEvent;
@@ -24,28 +31,77 @@ public class GameController extends GameFramework {
         PApplet.main("edu.austral.GameController");
     }
 
-    public static GameController INSTANCE;
-
-    List<PlayerController> playerControllers = new ArrayList<>();
-    public ShotController shotController;
-    LevelController levelController;
-    GameConfiguration gameConfiguration;
+    private List<PlayerController> playerControllers = new ArrayList<>();
+    public ShotController shotController = new ShotController();
     public View view = new View();
+    private Game game = Game.getINSTANCE();
+    private GameConfiguration gameConfiguration = new GameConfiguration();
+    private List<KeyConfiguration> keyConfigurations;
+    private LevelController levelController;
+
+    public static GameController INSTANCE;
 
     public GameController(){
         INSTANCE = this;
-        Map<Integer, EnumAction> map = new HashMap<>();
-        map.put(39, EnumAction.ROTATE_COUNTERCLOCKWISE);
-        map.put(38, EnumAction.FORWARD);
-        map.put(37, EnumAction.ROTATE_CLOCKWISE);
-        map.put(40, EnumAction.BACKWARDS);
-        KeyConfiguration keyConfiguration = new KeyConfiguration(map);
-        PlayerController playerController = new PlayerController(new Vector2(100, 100), this, keyConfiguration);
-        playerControllers.add(playerController);
+        setGameConfiguration();
+        setKeyConfigurations();
+        checkAmountOfPlayersWithAmountOfKeys();
+        createPlayers();
+        setupGame();
+        startGame();
+        game.addView(view);
+        levelController = new LevelController();
+    }
+
+    private void setupGame(){
+
+    }
+
+    private void startGame(){
+
+    }
+
+    private void createPlayers(){
+        int i = 0;
+        List<Vector2> positions = generatePlayerPositions();
+        while (i < gameConfiguration.amountOfPlayers()){
+            KeyConfiguration keyConfiguration = keyConfigurations.get(i);
+            String playerName = gameConfiguration.playerNames.get(i);
+            PlayerController playerController = new PlayerController(keyConfiguration);
+            playerController.createPlayer(playerName, i, positions.get(i));
+            playerControllers.add(playerController);
+            i++;
+        }
+    }
+
+    private void setGameConfiguration(){
+        ConfigLifter<GameConfiguration> lifter = new GameConfigurationLifter();
+        gameConfiguration = lifter.lift();
+        if(!gameConfiguration.hasPlayerNames()) throw new RuntimeException("There are no players set in config!");
+    }
+
+    private List<Vector2> generatePlayerPositions(){
+
+        Generator<Vector2> playerVectorGenerators = new PositionPlayerGenerator();
+        int xBound = game.getMap().getXLength();
+        int yBound = game.getMap().getYLength();
+        return playerVectorGenerators.generate(gameConfiguration.amountOfPlayers(), xBound, yBound);
+    }
+
+    private void setKeyConfigurations(){
+        ConfigLifter<List<KeyConfiguration>> keyConfigurationConfigLifter = new KeyConfigurationLifter();
+        keyConfigurations = keyConfigurationConfigLifter.lift();
+        if(keyConfigurations.size() == 0) throw new RuntimeException("There is no configuration for the player keys!");
+    }
+
+    private void checkAmountOfPlayersWithAmountOfKeys(){
+        if(gameConfiguration.amountOfPlayers() > keyConfigurations.size()) throw new RuntimeException("There are more players than key configs !!");
     }
 
     @Override public void draw(float time, PApplet graphics) {
         view.render(graphics);
+        game.iterate();
+        levelController.operate();
     }
 
     @Override public void keyPressed(KeyEvent event) {
@@ -53,14 +109,5 @@ public class GameController extends GameFramework {
         for(PlayerController p: playerControllers){
             p.keyPressed(event);
         }
-    }
-
-    public GameConfiguration getGameConfiguration() {
-        return gameConfiguration;
-    }
-
-    public void setKeyConfig(){
-        JSONConfigurationParser<KeyConfiguration> jsonConfigurationParser = new JSONConfigurationParser<>();
-        List<KeyConfiguration> configs = jsonConfigurationParser.getConfig("/home/toams/facultad/starships/src/main/resources/keyConfig.json");
     }
 }

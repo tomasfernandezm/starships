@@ -20,7 +20,7 @@ public class BoundaryVectorGenerator implements Generator<Vector2>{
         return result;
     }
 
-    private Vector2 generate(int xLength, int yLength){
+    public Vector2 generate(int xLength, int yLength){
         int side = random.nextInt(3);
         float x = 0;
         float y = 0;

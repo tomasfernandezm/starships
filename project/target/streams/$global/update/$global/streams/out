@@ -6070,7 +6070,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 2160ms :: artifacts dl 40ms
+[debug] :: resolution report :: resolve 3139ms :: artifacts dl 22ms
 [debug] 	report for default#starships-build;0.1-SNAPSHOT compile produced in /home/toams/facultad/starships/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-starships-build-compile.xml
 [debug] 	report for default#starships-build;0.1-SNAPSHOT runtime produced in /home/toams/facultad/starships/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-starships-build-runtime.xml
 [debug] 	report for default#starships-build;0.1-SNAPSHOT test produced in /home/toams/facultad/starships/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-starships-build-test.xml
@@ -6084,5 +6084,5 @@
 [debug] 	report for default#starships-build;0.1-SNAPSHOT docs produced in /home/toams/facultad/starships/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-starships-build-docs.xml
 [debug] 	report for default#starships-build;0.1-SNAPSHOT pom produced in /home/toams/facultad/starships/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-starships-build-pom.xml
 [debug] 	report for default#starships-build;0.1-SNAPSHOT scala-tool produced in /home/toams/facultad/starships/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-starships-build-scala-tool.xml
-[debug] 	resolve done (2160ms resolve - 40ms download)
+[debug] 	resolve done (3139ms resolve - 22ms download)
 [info] Done updating.

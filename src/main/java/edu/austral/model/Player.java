@@ -4,6 +4,7 @@ import edu.austral.model.entities.Shot;
 import edu.austral.model.entities.Starship;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Player {
 
@@ -12,11 +13,6 @@ public class Player {
     private int score = 0;
     private Starship ship;
     private boolean alive = true;
-
-    public Player(String name, int number){
-        this.name = name;
-        this.number = number;
-    }
 
     public Player(String name, int number, Starship spaceship) {
         this.name = name;
@@ -44,7 +40,7 @@ public class Player {
         ship.moveBackwards();
     }
 
-    public List<Shot> shoot(){
+    public Optional<List<Shot>> shoot(){
         return ship.shoot(this);
     }
 }

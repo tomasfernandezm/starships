@@ -11,12 +11,6 @@ import java.util.List;
 
 public class ShotController {
 
-    PApplet sketch;
-
-    public ShotController(PApplet sketch) {
-        this.sketch = sketch;
-    }
-
     void shotFired(List<Shot> shots){
         Game.getINSTANCE().getEntities().addAll(shots);
         for(Shot s: shots){

@@ -2,29 +2,63 @@ package edu.austral.model;
 
 import edu.austral.model.entities.Entity;
 import edu.austral.util.CollisionEngine;
+import edu.austral.view.View;
+import scala.collection.JavaConverters;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
 
-    private static Game INSTANCE = new Game();
+    public View view;
+    private List<Player> playerList = new ArrayList<>();
+    private List<Entity> entities = new ArrayList<>();
+    private Map map = new Map(500, 500);
+    private CollisionEngine<Entity> collisionEngine = new CollisionEngine<>();
+    private Graveyard graveyard = new Graveyard();
 
+    private static Game INSTANCE = new Game();
     public static Game getINSTANCE(){
         return INSTANCE;
     }
 
-    private Game(){
+    private Game(){ }
 
+    public void iterate(){
+        moveEntities();
+        checkCollisions();
+        sendToGraveyard();
+        removeGraveyardEntitiesFromGame();
+        graveyard.empty();
     }
 
-    private List<Player> playerList;
-    private List<Entity> entities;
-    private Map map = new Map(500, 500);
-    private CollisionEngine collisionEngine;
-    private Graveyard graveyard;
+    private void moveEntities(){
+        for(Entity e: entities){
+            e.move();
+        }
+    }
 
-    public List<Player> getPlayerList() {
-        return playerList;
+    private void checkCollisions(){
+        collisionEngine.checkCollisions(JavaConverters.asScalaBuffer(entities));
+    }
+
+    private void sendToGraveyard(){
+        for(Entity e: entities){
+            if(!e.isAlive()) {
+                graveyard.addToGraveyard(e);
+            }
+        }
+    }
+
+    private void removeGraveyardEntitiesFromGame(){
+        for(Entity e: graveyard.getEntities()){
+            view.remove(e);
+            entities.remove(e);
+        }
+    }
+
+    public void addView(View view){
+        this.view = view;
     }
 
     public List<Entity> getEntities() {
@@ -33,13 +67,5 @@ public class Game {
 
     public Map getMap() {
         return map;
-    }
-
-    public CollisionEngine getCollisionEngine() {
-        return collisionEngine;
-    }
-
-    public Graveyard getGraveyard() {
-        return graveyard;
     }
 }

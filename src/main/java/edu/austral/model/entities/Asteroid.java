@@ -9,8 +9,8 @@ public class Asteroid extends Entity {
 
     private final float size;
 
-    Asteroid(float life, Vector2 position, Vector2 direction, float speed, float size) {
-        super(life, position, direction, speed);
+    public Asteroid(Vector2 position, Vector2 direction, float speed, float size) {
+        super(size, position, direction, speed, EntityEnum.ASTEROID);
         this.shape = new Ellipse2D.Float(position.x(), position.y(), size, size);
         this.size = size;
     }

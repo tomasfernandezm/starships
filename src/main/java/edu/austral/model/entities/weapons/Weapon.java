@@ -1,28 +1,38 @@
 package edu.austral.model.entities.weapons;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import edu.austral.model.Constants;
 import edu.austral.model.Player;
 import edu.austral.model.entities.Shot;
 import edu.austral.model.entities.Starship;
 import edu.austral.util.Timer;
-import edu.austral.util.Vector2;
 
 import java.util.List;
+import java.util.Optional;
 
 public abstract class Weapon {
 
     private final double shotInterval = Constants.SHOOT_INTERVAL;
-    private int capacity;
+    protected int capacity;
     Timer timer = new Timer(Constants.SHOOT_INTERVAL);
 
-    public Weapon(int capacity) {
+    Weapon(int capacity) {
         this.capacity = capacity;
     }
 
-    public abstract List<Shot> shoot(Player player, Starship starship);
+    public abstract List<Shot> shootW(Player player, Starship starship);
+
+    public Optional<List<Shot>> shoot(Player player, Starship starship){ ;
+        if(canShoot()) {
+            Optional<List<Shot>> listOptional = Optional.of(shootW(player, starship));
+            timer.restart();
+            return listOptional;
+        }
+        else return Optional.empty();
+    };
 
     public boolean canShoot(){
-        return capacity > 0 && timer.canOperate();
+        return hasCapacity() && timer.canOperate();
     }
+
+    public abstract boolean hasCapacity();
 }

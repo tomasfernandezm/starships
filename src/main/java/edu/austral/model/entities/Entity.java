@@ -7,17 +7,20 @@ import java.awt.*;
 
 public abstract class Entity implements Collisionable<Entity>{
 
-    protected Shape shape;
-    protected Vector2 position;
-    protected Vector2 direction;
-    protected final float speed;
-    protected float life;
+    Shape shape;
+    Vector2 position;
+    Vector2 direction;
+    float directionAngle = 0;
+    final float speed;
+    float life;
+    private EntityEnum type;
 
-    Entity(float life, Vector2 position, Vector2 direction, float speed) {
+    Entity(float life, Vector2 position, Vector2 direction, float speed, EntityEnum type) {
         this.position = position;
         this.direction = direction;
         this.speed = speed;
         this.life = life;
+        this.type = type;
     }
 
     @Override
@@ -42,10 +45,6 @@ public abstract class Entity implements Collisionable<Entity>{
         return speed;
     }
 
-    public double getLife() {
-        return life;
-    }
-
     public void move(){
         position = position.$plus(direction.$times(speed));
     }
@@ -54,9 +53,13 @@ public abstract class Entity implements Collisionable<Entity>{
         return life > 0;
     }
 
-    public void suffersDamage(int damage){
-        life -= damage;
+    public abstract float getCollisionDamage();
+
+    public float getDirectionAngle() {
+        return directionAngle;
     }
 
-    public abstract float getCollisionDamage();
+    public EntityEnum getType() {
+        return type;
+    }
 }

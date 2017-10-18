@@ -13,7 +13,7 @@ public class Map {
         this.yLength = yLength;
     }
 
-    public boolean isInMap(Vector2 vector){
+    boolean isInMap(Vector2 vector){
         boolean moveInX = vector.x() < xLength && vector.x() > 0;
         boolean moveInY = vector.y() < yLength && vector.y() > 0;
         return moveInX && moveInY;
@@ -30,5 +30,13 @@ public class Map {
     private boolean canMove(Entity entity, int direction){
         Vector2 position = entity.getPosition().$plus(entity.getDirection().$times(entity.getSpeed()*direction));
         return isInMap(position);
+    }
+
+    public int getXLength() {
+        return xLength;
+    }
+
+    public int getYLength() {
+        return yLength;
     }
 }
