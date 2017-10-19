@@ -12,7 +12,6 @@ import java.util.List;
 public class Game {
 
     public View view;
-    private List<Player> playerList = new ArrayList<>();
     private List<Entity> entities = new ArrayList<>();
     private Map map = new Map(500, 500);
     private CollisionEngine<Entity> collisionEngine = new CollisionEngine<>();
@@ -56,10 +55,8 @@ public class Game {
         }
     }
 
-    public void addEntity(Entity e){
-        if(e.getType().equals(EntityEnum.SHOT)) {
-            entities.add(e);
-        }
+    public void addEntity(Entity e) {
+        entities.add(e);
     }
 
     public void addView(View view){
