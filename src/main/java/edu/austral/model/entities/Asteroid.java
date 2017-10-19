@@ -20,6 +20,11 @@ public class Asteroid extends Entity {
     }
 
     @Override
+    public void collisionedWith(Entity collisionable) {
+        if(!collisionable.getType().equals(EntityEnum.ASTEROID)) super.collisionedWith(collisionable);
+    }
+
+    @Override
     public float getCollisionDamage() {
         return size;
     }

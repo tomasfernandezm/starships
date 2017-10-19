@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class Player {
 
-    private final String name;
+    public final String name;
     private final int number;
     private int score = 0;
     private Starship ship;

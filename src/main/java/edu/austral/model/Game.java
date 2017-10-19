@@ -16,7 +16,7 @@ public class Game {
 
     public View view;
     private List<Entity> entities = new ArrayList<>();
-    private Map map = new Map(500, 500);
+    private Map map = new Map(900, 800);
     private CollisionEngine<Entity> collisionEngine = new CollisionEngine<>();
     private Graveyard graveyard = new Graveyard();
 
@@ -37,7 +37,7 @@ public class Game {
 
     private void moveEntities(){
         for(Entity e: entities){
-            if(!e.getType().equals(STARSHIP))e.move();
+            if(!e.getType().equals(STARSHIP)) e.move();
         }
     }
 

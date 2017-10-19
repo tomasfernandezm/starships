@@ -9,7 +9,7 @@ public abstract class GameFramework extends PApplet {
 
     PImage backgroundImage;
     @Override public void settings() {
-        size(500, 500);
+        size(900, 800);
         backgroundImage = loadImage("/home/toams/facultad/starships/src/main/resources/images/space.jpg");
     }
 

@@ -1,12 +1,17 @@
 package edu.austral.model.entities;
 
+import edu.austral.model.EntityObserver;
+import edu.austral.model.Observable;
 import edu.austral.util.Collisionable;
 import edu.austral.util.Vector2;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observer;
 
-public abstract class Entity implements Collisionable<Entity>{
+public abstract class Entity implements Collisionable<Entity>, Observable{
 
     Shape shape;
     Vector2 position;
@@ -15,6 +20,7 @@ public abstract class Entity implements Collisionable<Entity>{
     final float speed;
     float life;
     private EntityEnum type;
+    private List<EntityObserver> observerList = new ArrayList<>();
 
     Entity(float life, Vector2 position, Vector2 direction, float speed, EntityEnum type) {
         this.position = position;
@@ -27,6 +33,7 @@ public abstract class Entity implements Collisionable<Entity>{
     @Override
     public void collisionedWith(Entity collisionable) {
         life -= collisionable.getCollisionDamage();
+        if(!isAlive()) for(EntityObserver e: observerList) e.notify(this);
         // TODO make collision have consequences in the position and direction
     }
 
@@ -67,5 +74,20 @@ public abstract class Entity implements Collisionable<Entity>{
 
     public EntityEnum getType() {
         return type;
+    }
+
+    @Override
+    public void addObserver(EntityObserver eo) {
+        observerList.add(eo);
+    }
+
+    @Override
+    public void deleteObserver(EntityObserver eo) {
+        observerList.remove(eo);
+    }
+
+    @Override
+    public void deleteObservers() {
+        observerList.clear();
     }
 }

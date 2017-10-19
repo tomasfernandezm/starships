@@ -15,6 +15,7 @@ public class Starship extends Entity {
 
     private Weapon weapon;
     private float collisionDamage;
+    public Player player;
 
     public Starship(float life, Vector2 position, Vector2 direction, float speed) {
         super(life, position, direction, speed, EntityEnum.STARSHIP);
@@ -25,6 +26,7 @@ public class Starship extends Entity {
 
     @Override
     public void collisionedWith(Entity collisionable) {
+        System.out.println(player.name + "has: " + life + " life left");
         if(collisionable.getType().equals(EntityEnum.FWEAPON)) changeWeapon(((FWeapon) collisionable).getWeapon());
         else super.collisionedWith(collisionable);
     }

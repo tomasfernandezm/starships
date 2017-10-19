@@ -44,6 +44,7 @@ public class PlayerController {
     public void createPlayer(String name, int playerNumber, Vector2 position) {
         Starship ship = new Starship(100, position, new Vector2(0, -1), 10);
         player = new Player(name, playerNumber, ship);
+        ship.player = player;
         GameController gameController = GameController.INSTANCE;
         Game.getINSTANCE().addEntity(ship);
         gameController.view.add(new StarshipSprite(ship));
