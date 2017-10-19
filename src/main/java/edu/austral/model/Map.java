@@ -14,8 +14,8 @@ public class Map {
     }
 
     boolean isInMap(Vector2 vector){
-        boolean moveInX = vector.x() < xLength && vector.x() > 0;
-        boolean moveInY = vector.y() < yLength && vector.y() > 0;
+        boolean moveInX = vector.x() <= xLength && vector.x() >= 0;
+        boolean moveInY = vector.y() <= yLength && vector.y() >= 0;
         return moveInX && moveInY;
     }
 

@@ -24,9 +24,7 @@ public class Shot extends Entity{
 
     @Override
     public void collisionedWith(Entity collisionable) {
-        super.collisionedWith(collisionable);
-        System.out.println("collisioned: " + life);
-        // TODO Something is not working in the shot collision
+        life -= collisionable.getCollisionDamage();
     }
 
     @Override

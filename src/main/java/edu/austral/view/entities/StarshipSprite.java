@@ -10,7 +10,6 @@ import processing.core.PImage;
 
 public class StarshipSprite extends EntitySprite {
 
-    private PImage shipImage;
 
     public StarshipSprite(Entity entity) {
         super(entity);
@@ -18,21 +17,16 @@ public class StarshipSprite extends EntitySprite {
 
     @Override
     public void render(PApplet sketch) {
-        shipImage = sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/starship.jpeg");
 
         float entityWidth = entity.getShape().getBounds().width;
         float entityHeight = entity.getShape().getBounds().height;
         float positionX = entity.getPosition().x();
         float positionY = entity.getPosition().y();
-        sketch.rect(positionX - entityWidth/2, positionY - entityHeight/2,
-                entityWidth, entityHeight);
-        PImage image = shipImage;
+        PImage image = sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/starship.png");
 
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
         sketch.rotate(entity.getDirectionAngle());
-        sketch.rect(positionX - entityWidth/2, positionY - entityHeight/2,
-                entityWidth, entityHeight);
         sketch.image(image, -entityHeight/2,-entityWidth/2, entityHeight, entityWidth);
         sketch.popMatrix();
     }

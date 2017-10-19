@@ -9,6 +9,9 @@ import scala.collection.JavaConverters;
 import java.util.ArrayList;
 import java.util.List;
 
+import static edu.austral.model.entities.EntityEnum.FWEAPON;
+import static edu.austral.model.entities.EntityEnum.STARSHIP;
+
 public class Game {
 
     public View view;
@@ -25,16 +28,16 @@ public class Game {
     private Game(){ }
 
     public void iterate(){
+        moveEntities();
         checkCollisions();
         sendToGraveyard();
         removeGraveyardEntitiesFromGame();
         graveyard.empty();
-        moveEntities();
     }
 
     private void moveEntities(){
         for(Entity e: entities){
-            e.move();
+            if(!e.getType().equals(STARSHIP))e.move();
         }
     }
 
@@ -44,7 +47,7 @@ public class Game {
 
     private void sendToGraveyard(){
         for(Entity e: entities){
-            if(!e.isAlive()) graveyard.addToGraveyard(e);
+            if(!e.isAlive() || !map.isInMap(e.getPosition())) graveyard.addToGraveyard(e);
         }
     }
 

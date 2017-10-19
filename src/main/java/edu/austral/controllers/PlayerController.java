@@ -42,10 +42,10 @@ public class PlayerController {
     }
 
     public void createPlayer(String name, int playerNumber, Vector2 position) {
-        Vector2 direction = getUnitaryDirection(position);
-        Starship ship = new Starship(100, position, direction, 10);
+        Starship ship = new Starship(100, position, new Vector2(0, -1), 10);
         player = new Player(name, playerNumber, ship);
         GameController gameController = GameController.INSTANCE;
+        Game.getINSTANCE().addEntity(ship);
         gameController.view.add(new StarshipSprite(ship));
     }
 
@@ -74,11 +74,5 @@ public class PlayerController {
             GameController gameController = GameController.INSTANCE;
             gameController.shotController.shotFired(shots);
         });
-    }
-
-    private Vector2 getUnitaryDirection(Vector2 position) {
-        Generator<Vector2> generator = new RandomVectorGenerator();
-        List<Vector2> vectors = generator.generate(1, 500, 500);
-        return vectors.get(0).$minus(position).unitary();
     }
 }

@@ -24,6 +24,12 @@ public class FWeapon extends Entity {
         return collisionDamage;
     }
 
+    @Override
+    public void collisionedWith(Entity collisionable) {
+        if(collisionable.getType().equals(EntityEnum.STARSHIP)) life = -1;
+        else super.collisionedWith(collisionable);
+    }
+
     public Weapon getWeapon() {
         return weapon;
     }

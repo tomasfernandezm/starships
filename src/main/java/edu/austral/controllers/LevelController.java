@@ -7,6 +7,7 @@ import edu.austral.model.entities.Entity;
 import edu.austral.model.entities.FWeapon;
 import edu.austral.util.Timer;
 import edu.austral.util.Vector2;
+import edu.austral.util.generator.BoundaryDirectionGenerator;
 import edu.austral.util.generator.BoundaryVectorGenerator;
 import edu.austral.util.generator.Generator;
 import edu.austral.view.View;
@@ -26,9 +27,10 @@ public class LevelController {
     private View view;
     private Timer weaponTimer;
     private double averageMillisBetweenAsteroidSpawn = 2000;
-    private double averageMillisBetweenWeaponSpawn = 5000;
+    private double averageMillisBetweenWeaponSpawn = 10000;
     private float asteroidSizeMean = 40;
     private Generator<Vector2> boundaryVectorGenerator = new BoundaryVectorGenerator();
+    private Generator<Vector2> boundaryDirectionGenerator = new BoundaryDirectionGenerator();
     private int xDimension;
     private int yDimension;
 
@@ -49,7 +51,8 @@ public class LevelController {
     private void spawnAsteroid() {
         float size = random.nextFloat()*2*asteroidSizeMean;
         Vector2 position = boundaryVectorGenerator.generate(xDimension, yDimension);
-        Asteroid asteroid = new Asteroid(position, position.$times(-1).unitary(),1, size);
+        Vector2 direction = boundaryDirectionGenerator.generate(xDimension, yDimension);
+        Asteroid asteroid = new Asteroid(position, direction,1, size);
         view.add(new AsteroidSprite(asteroid));
         Game.getINSTANCE().addEntity(asteroid);
         setNewTimerInterval(asteroidTimer, averageMillisBetweenAsteroidSpawn);
@@ -57,7 +60,8 @@ public class LevelController {
 
     private void spawnFWeapon() {
         Vector2 position = boundaryVectorGenerator.generate(xDimension, yDimension);
-        FWeapon weapon = new FWeapon(100, position, position.$times(-1).unitary(), 1);
+        Vector2 direction = boundaryDirectionGenerator.generate(xDimension, yDimension);
+        FWeapon weapon = new FWeapon(100, position, direction, 1);
         view.add(new FWeaponSprite(weapon));
         Game.getINSTANCE().addEntity(weapon);
         setNewTimerInterval(weaponTimer, averageMillisBetweenWeaponSpawn);

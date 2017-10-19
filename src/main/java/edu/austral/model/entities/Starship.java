@@ -25,7 +25,8 @@ public class Starship extends Entity {
 
     @Override
     public void collisionedWith(Entity collisionable) {
-        super.collisionedWith(collisionable);
+        if(collisionable.getType().equals(EntityEnum.FWEAPON)) changeWeapon(((FWeapon) collisionable).getWeapon());
+        else super.collisionedWith(collisionable);
     }
 
     @Override
@@ -37,10 +38,8 @@ public class Starship extends Entity {
         return weapon.shoot(player, this);
     }
 
-    public Weapon changeWeapon(Weapon weapon){
-        Weapon oldWeapon = this.weapon;
+    private void changeWeapon(Weapon weapon){
         this.weapon = weapon;
-        return oldWeapon;
     }
 
     public void moveBackwards(){

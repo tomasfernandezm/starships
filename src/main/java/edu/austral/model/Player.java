@@ -12,7 +12,6 @@ public class Player {
     private final int number;
     private int score = 0;
     private Starship ship;
-    private boolean alive = true;
 
     public Player(String name, int number, Starship spaceship) {
         this.name = name;
@@ -22,6 +21,10 @@ public class Player {
 
     public Starship getShip(){
         return ship;
+    }
+
+    public boolean isAlive(){
+        return ship.isAlive();
     }
 
     public void addToScore(int toAdd){
