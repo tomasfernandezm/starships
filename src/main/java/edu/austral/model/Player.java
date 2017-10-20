@@ -1,5 +1,6 @@
 package edu.austral.model;
 
+import edu.austral.controllers.PlayerController;
 import edu.austral.model.entities.Shot;
 import edu.austral.model.entities.Starship;
 
@@ -12,11 +13,13 @@ public class Player {
     private final int number;
     private int score = 0;
     private Starship ship;
+    public PlayerController playerController;
 
-    public Player(String name, int number, Starship spaceship) {
+    public Player(String name, int number, Starship spaceship, PlayerController playerController) {
         this.name = name;
         this.number = number;
         this.ship = spaceship;
+        this.playerController = playerController;
     }
 
     public Starship getShip(){

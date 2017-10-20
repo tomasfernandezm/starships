@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observer;
 
+import static edu.austral.model.entities.EntityEnum.SHOT;
+
 public abstract class Entity implements Collisionable<Entity>, Observable{
 
     Shape shape;
@@ -33,8 +35,13 @@ public abstract class Entity implements Collisionable<Entity>, Observable{
     @Override
     public void collisionedWith(Entity collisionable) {
         life -= collisionable.getCollisionDamage();
-        if(!isAlive()) for(EntityObserver e: observerList) e.notify(this);
-        // TODO make collision have consequences in the position and direction
+        if(life < 0){
+            life = 0;
+            if(collisionable.getType().equals(SHOT)){
+                Shot shot = (Shot) collisionable;
+                shot.getPlayer().addToScore((int) getCollisionDamage());
+            }
+        }
     }
 
     public Shape getShape() {

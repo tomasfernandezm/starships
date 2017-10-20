@@ -20,7 +20,7 @@ import static edu.austral.controllers.configuration.EnumAction.*;
 
 public class PlayerController {
 
-    private float rotationMagnitude = 100;
+    private float rotationMagnitude = 15;
     private Player player;
     private KeyConfiguration keyConfiguration;
     private Map<EnumAction, Runnable> commands = new HashMap<>();
@@ -47,7 +47,7 @@ public class PlayerController {
 
     public void createPlayer(String name, int playerNumber, Vector2 position) {
         Starship ship = new Starship(100, position, new Vector2(0, -1), 10);
-        player = new Player(name, playerNumber, ship);
+        player = new Player(name, playerNumber, ship, this);
         ship.player = player;
         GameController gameController = GameController.INSTANCE;
         Game.getINSTANCE().addEntity(ship);

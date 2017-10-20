@@ -52,8 +52,15 @@ public class Starship extends Entity {
         direction = direction.rotate(angle);
         directionAngle += angle;
         if(directionAngle >= 360) directionAngle -= 360;
+        else if(directionAngle < 0 ) directionAngle += 360;
+        System.out.println("Angle is " +  directionAngle);
         AffineTransform tx = new AffineTransform();
-        tx.rotate(angle/(2*Math.PI), shape.getBounds().height/2, shape.getBounds().width/2);
+        tx.rotate(directionAngle*(Math.PI/180));
+        shape = tx.createTransformedShape(shape).getBounds2D();
+        double scaleX = 50/((double)shape.getBounds().width);
+        double scaleY = 50/((double) shape.getBounds().height);
+
+        tx.scale(scaleX, scaleY);
         shape = tx.createTransformedShape(shape);
     }
 }

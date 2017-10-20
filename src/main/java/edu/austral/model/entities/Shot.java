@@ -20,6 +20,10 @@ public class Shot extends Entity{
 
     }
 
+    public Player getPlayer(){
+        return author;
+    }
+
     @Override
     public void collisionedWith(Entity collisionable) {
         life -= collisionable.getCollisionDamage();
