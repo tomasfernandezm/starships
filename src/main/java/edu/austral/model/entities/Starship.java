@@ -26,7 +26,6 @@ public class Starship extends Entity {
 
     @Override
     public void collisionedWith(Entity collisionable) {
-        System.out.println(player.name + "has: " + life + " life left");
         if(collisionable.getType().equals(EntityEnum.FWEAPON)) changeWeapon(((FWeapon) collisionable).getWeapon());
         else super.collisionedWith(collisionable);
     }
@@ -49,18 +48,27 @@ public class Starship extends Entity {
     }
 
     public void rotate(float angle){
-        direction = direction.rotate(angle);
+        float radians = angle*((float) Math.PI/180);
+        direction = direction.rotate(radians);
         directionAngle += angle;
         if(directionAngle >= 360) directionAngle -= 360;
-        else if(directionAngle < 0 ) directionAngle += 360;
-        System.out.println("Angle is " +  directionAngle);
-        AffineTransform tx = new AffineTransform();
-        tx.rotate(directionAngle*(Math.PI/180));
-        shape = tx.createTransformedShape(shape).getBounds2D();
-        double scaleX = 50/((double)shape.getBounds().width);
-        double scaleY = 50/((double) shape.getBounds().height);
+        else if(directionAngle < 0) directionAngle += 360;
+        rotateShape(angle);
+    }
 
-        tx.scale(scaleX, scaleY);
-        shape = tx.createTransformedShape(shape);
+    private void rotateShape(float angle) {
+        double radians = angle*(Math.PI/180);
+        AffineTransform tx = new AffineTransform();
+        tx.rotate(radians);
+        shape = tx.createTransformedShape(shape).getBounds2D();
+        rescale(shape.getBounds().width, shape.getBounds().height, tx);
+
+    }
+
+    private void rescale(double xLength, double yLength, AffineTransform tx){
+        double x = 50/xLength;
+        double y = 50/yLength;
+        tx.scale(x, y);
+        shape = tx.createTransformedShape(shape).getBounds2D();
     }
 }

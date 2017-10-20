@@ -3,6 +3,7 @@ package edu.austral.view.entities;
 import edu.austral.model.entities.Asteroid;
 import edu.austral.model.entities.Entity;
 import processing.core.PApplet;
+import processing.core.PConstants;
 import processing.core.PImage;
 
 public class AsteroidSprite extends EntitySprite{
@@ -23,7 +24,9 @@ public class AsteroidSprite extends EntitySprite{
 
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
-        sketch.image(image, -entityHeight/2,-entityWidth/2, entityHeight, entityWidth);
+        sketch.ellipseMode(PConstants.CENTER);
+        sketch.ellipse(0, 0, entityHeight, entityWidth);
+        // sketch.image(image, -entityHeight/2,-entityWidth/2, entityHeight, entityWidth);
         sketch.popMatrix();
     }
 }

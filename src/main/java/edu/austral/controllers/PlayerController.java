@@ -46,7 +46,7 @@ public class PlayerController {
     }
 
     public void createPlayer(String name, int playerNumber, Vector2 position) {
-        Starship ship = new Starship(100, position, new Vector2(0, -1), 10);
+        Starship ship = new Starship(10000, position, new Vector2(0, -1), 10);
         player = new Player(name, playerNumber, ship, this);
         ship.player = player;
         GameController gameController = GameController.INSTANCE;

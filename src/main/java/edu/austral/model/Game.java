@@ -29,11 +29,11 @@ public class Game {
     private Game(){ }
 
     public void iterate(){
-        moveEntities();
         checkCollisions();
         sendToGraveyard();
         removeGraveyardEntitiesFromGame();
         graveyard.empty();
+        moveEntities();
     }
 
     private void moveEntities(){
