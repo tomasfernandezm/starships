@@ -12,8 +12,9 @@ import java.util.List;
 import java.util.Observer;
 
 import static edu.austral.model.entities.EntityEnum.SHOT;
+import static edu.austral.model.entities.EntityEnum.STARSHIP;
 
-public abstract class Entity implements Collisionable<Entity>, Observable{
+public abstract class Entity implements Collisionable<Entity>{
 
     Shape shape;
     Vector2 position;
@@ -22,7 +23,6 @@ public abstract class Entity implements Collisionable<Entity>, Observable{
     final float speed;
     public int life;
     private EntityEnum type;
-    private List<EntityObserver> observerList = new ArrayList<>();
 
     Entity(int life, Vector2 position, Vector2 direction, float speed, EntityEnum type) {
         this.position = position;
@@ -61,12 +61,17 @@ public abstract class Entity implements Collisionable<Entity>, Observable{
     }
 
     public void move(){
-
+        if(this.getType().equals(STARSHIP)){
+            System.out.println("AAAA");
+        }
         AffineTransform affineTransform = new AffineTransform();
+        affineTransform.setToIdentity();
         position = position.$plus(direction.$times(speed));
         affineTransform.translate(direction.x()*speed, direction.y()*speed);
-        shape = affineTransform.createTransformedShape(shape);
-
+        shape = affineTransform.createTransformedShape(shape).getBounds2D();
+        if(this.getType().equals(STARSHIP)){
+            System.out.println(shape.getBounds().x + " | " + shape.getBounds().y);
+        }
     }
 
     public boolean isAlive(){
@@ -81,20 +86,5 @@ public abstract class Entity implements Collisionable<Entity>, Observable{
 
     public EntityEnum getType() {
         return type;
-    }
-
-    @Override
-    public void addObserver(EntityObserver eo) {
-        observerList.add(eo);
-    }
-
-    @Override
-    public void deleteObserver(EntityObserver eo) {
-        observerList.remove(eo);
-    }
-
-    @Override
-    public void deleteObservers() {
-        observerList.clear();
     }
 }

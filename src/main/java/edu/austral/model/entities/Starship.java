@@ -19,7 +19,7 @@ public class Starship extends Entity {
 
     public Starship(int life, Vector2 position, Vector2 direction, float speed) {
         super(life, position, direction, speed, EntityEnum.STARSHIP);
-        this.shape = new Rectangle2D.Float(position.x(), position.y(), Constants.STARSHIP_HEIGHT, Constants.STARSHIP_WIDTH);
+        this.shape = new Rectangle2D.Float(position.x() - Constants.STARSHIP_WIDTH/2, position.y() - Constants.STARSHIP_HEIGHT/2, Constants.STARSHIP_HEIGHT, Constants.STARSHIP_WIDTH);
         this.weapon = new StandardWeapon();
         this.collisionDamage = life/10;
     }
@@ -44,7 +44,10 @@ public class Starship extends Entity {
     }
 
     public void moveBackwards(){
+        AffineTransform affineTransform = new AffineTransform();
         position = position.$minus(direction.$times(speed));
+        affineTransform.translate(-1*direction.x()*speed, -1*direction.y()*speed);
+        shape = affineTransform.createTransformedShape(shape);
     }
 
     public void rotate(float angle){
@@ -53,22 +56,5 @@ public class Starship extends Entity {
         directionAngle += angle;
         if(directionAngle >= 360) directionAngle -= 360;
         else if(directionAngle < 0) directionAngle += 360;
-        rotateShape(angle);
-    }
-
-    private void rotateShape(float angle) {
-        double radians = angle*(Math.PI/180);
-        AffineTransform tx = new AffineTransform();
-        tx.rotate(radians);
-        shape = tx.createTransformedShape(shape).getBounds2D();
-        rescale(shape.getBounds().width, shape.getBounds().height, tx);
-
-    }
-
-    private void rescale(double xLength, double yLength, AffineTransform tx){
-        double x = 50/xLength;
-        double y = 50/yLength;
-        tx.scale(x, y);
-        shape = tx.createTransformedShape(shape).getBounds2D();
     }
 }

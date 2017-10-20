@@ -47,6 +47,7 @@ public class PlayerController {
 
     public void createPlayer(String name, int playerNumber, Vector2 position) {
         Starship ship = new Starship(10000, position, new Vector2(0, -1), 10);
+        System.out.println(position.x() + " | " + position.y());
         player = new Player(name, playerNumber, ship, this);
         ship.player = player;
         GameController gameController = GameController.INSTANCE;
@@ -66,6 +67,7 @@ public class PlayerController {
         if (Game.getINSTANCE().getMap().canMoveForward(player.getShip())) {
             player.moveForward();
         }
+        System.out.println(player.getShip().getShape().getBounds().x + " | " + player.getShip().getShape().getBounds().y);
     }
 
     private void moveBackwards() {
