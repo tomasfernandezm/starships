@@ -2,13 +2,13 @@ package edu.austral.view.entities;
 
 import edu.austral.model.entities.Entity;
 import edu.austral.util.Vector2;
+import edu.austral.view.Drawable;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
 import java.awt.*;
 
-public interface Drawable {
+public interface DrawableEntity extends Drawable {
 
-    void render(PApplet sketch);
     boolean represents(Entity entity);
 }

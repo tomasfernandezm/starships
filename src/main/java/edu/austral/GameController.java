@@ -3,28 +3,22 @@ package edu.austral;
 import edu.austral.controllers.LevelController;
 import edu.austral.controllers.PlayerController;
 import edu.austral.controllers.ShotController;
-import edu.austral.controllers.configuration.EnumAction;
 import edu.austral.controllers.configuration.GameConfiguration;
 import edu.austral.controllers.configuration.lifter.ConfigLifter;
 import edu.austral.controllers.configuration.lifter.GameConfigurationLifter;
 import edu.austral.controllers.configuration.lifter.KeyConfigurationLifter;
-import edu.austral.model.Constants;
 import edu.austral.model.Game;
 import edu.austral.model.Player;
 import edu.austral.util.generator.Generator;
 import edu.austral.util.generator.PositionPlayerGenerator;
-import edu.austral.util.json.JSONGenericParser;
 import edu.austral.controllers.configuration.KeyConfiguration;
 import edu.austral.util.Vector2;
-import edu.austral.view.ImageContainer;
 import edu.austral.view.View;
 import processing.core.PApplet;
 import processing.event.KeyEvent;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class GameController extends GameFramework {
     public static void main(String args[]) {
@@ -32,6 +26,7 @@ public class GameController extends GameFramework {
     }
 
     private List<PlayerController> playerControllers = new ArrayList<>();
+    private List<Player> players = new ArrayList<>();
     public ShotController shotController = new ShotController();
     public View view = new View();
     private Game game = Game.getINSTANCE();
@@ -66,9 +61,10 @@ public class GameController extends GameFramework {
         List<Vector2> positions = generatePlayerPositions();
         while (i < gameConfiguration.amountOfPlayers()){
             KeyConfiguration keyConfiguration = keyConfigurations.get(i);
-            String playerName = gameConfiguration.playerNames.get(i);
+            String playerName = gameConfiguration.playerNames.get(i+1);
             PlayerController playerController = new PlayerController(keyConfiguration);
             playerController.createPlayer(playerName, i, positions.get(i));
+            view.add(playerController.getPlayer());
             playerControllers.add(playerController);
             i++;
         }
@@ -105,7 +101,6 @@ public class GameController extends GameFramework {
     }
 
     @Override public void keyPressed(KeyEvent event) {
-        System.out.println(event.getKeyCode());
         for(PlayerController p: playerControllers){
             p.keyPressed(event);
         }

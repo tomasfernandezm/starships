@@ -1,15 +1,16 @@
 package edu.austral;
 
-import edu.austral.view.ImageContainer;
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.event.KeyEvent;
+
+import static edu.austral.Constants.*;
 
 public abstract class GameFramework extends PApplet {
 
     PImage backgroundImage;
     @Override public void settings() {
-        size(900, 800);
+        size(VIEW_WIDTH, VIEW_HEIGHT);
         backgroundImage = loadImage("/home/toams/facultad/starships/src/main/resources/images/space.jpg");
     }
 
@@ -20,7 +21,7 @@ public abstract class GameFramework extends PApplet {
     @Override public void draw() {
         clear();
         background(0);
-        image(backgroundImage, 0, 0);
+        image(backgroundImage, 0, 0, MAP_WIDTH,MAP_HEIGHT);
         draw((frameRate / 60) * 100, this);
     }
 

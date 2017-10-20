@@ -36,9 +36,13 @@ public class PlayerController {
     }
 
     public void keyPressed(KeyEvent keyEvent) {
-        keyConfiguration.get(keyEvent.getKeyCode()).ifPresent(enumAction -> {
+        if(player.isAlive()) keyConfiguration.get(keyEvent.getKeyCode()).ifPresent(enumAction -> {
             commands.get(enumAction).run();
         });
+    }
+
+    public Player getPlayer(){
+        return player;
     }
 
     public void createPlayer(String name, int playerNumber, Vector2 position) {

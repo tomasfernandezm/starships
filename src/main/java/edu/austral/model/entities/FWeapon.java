@@ -12,7 +12,7 @@ public class FWeapon extends Entity {
     private Weapon weapon;
     private final float collisionDamage;
 
-    public FWeapon(float life, Vector2 position, Vector2 direction, float speed) {
+    public FWeapon(int life, Vector2 position, Vector2 direction, float speed) {
         super(life, position, direction, speed, EntityEnum.FWEAPON);
         this.shape = new Rectangle2D.Float(position.x(), position.y(), 30, 30);
         collisionDamage = (float) life/10;

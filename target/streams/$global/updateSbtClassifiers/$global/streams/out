@@ -1,12 +1,12 @@
 [debug] Other repositories:
 [debug] Default repositories:
 [debug] Using inline dependencies specified in Scala.
-[debug] no default cache defined: set to /home/toams/.ivy2/cache
 [debug] :: resolving dependencies :: default#starships$sbt_2.10;0.1
 [debug] 	confs: [default]
 [debug] 	validate = true
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'default'
+[debug] no default cache defined: set to /home/toams/.ivy2/cache
 [debug] == resolving dependencies for default#starships$sbt_2.10;0.1 [default]
 [debug] == resolving dependencies default#starships$sbt_2.10;0.1->org.scala-sbt#sbt;0.13.16 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.16 ...
@@ -1779,9 +1779,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.16!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] :: resolution report :: resolve 1820ms :: artifacts dl 65ms
+[debug] :: resolution report :: resolve 2685ms :: artifacts dl 53ms
 [debug] 	report for default#starships$sbt_2.10;0.1 default produced in /home/toams/facultad/starships/target/scala-2.12/resolution-cache/reports/default-starships$sbt_2.10-default.xml
-[debug] 	resolve done (1820ms resolve - 65ms download)
+[debug] 	resolve done (2685ms resolve - 53ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#starships$sources_2.10;0.1
 [debug] 	confs: [default]
@@ -2459,6 +2459,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#tracking;0.13.16!tracking.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.16!test-agent.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#command;0.13.16!command.jar(src)
-[debug] :: resolution report :: resolve 748ms :: artifacts dl 95ms
+[debug] :: resolution report :: resolve 422ms :: artifacts dl 52ms
 [debug] 	report for default#starships$sources_2.10;0.1 default produced in /home/toams/facultad/starships/target/scala-2.12/resolution-cache/reports/default-starships$sources_2.10-default.xml
-[debug] 	resolve done (748ms resolve - 95ms download)
+[debug] 	resolve done (422ms resolve - 52ms download)

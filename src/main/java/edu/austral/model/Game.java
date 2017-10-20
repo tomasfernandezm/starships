@@ -1,5 +1,6 @@
 package edu.austral.model;
 
+import edu.austral.Constants;
 import edu.austral.model.entities.Entity;
 import edu.austral.model.entities.EntityEnum;
 import edu.austral.util.CollisionEngine;
@@ -16,7 +17,7 @@ public class Game {
 
     public View view;
     private List<Entity> entities = new ArrayList<>();
-    private Map map = new Map(900, 800);
+    private Map map = new Map(Constants.MAP_WIDTH, Constants.MAP_HEIGHT);
     private CollisionEngine<Entity> collisionEngine = new CollisionEngine<>();
     private Graveyard graveyard = new Graveyard();
 

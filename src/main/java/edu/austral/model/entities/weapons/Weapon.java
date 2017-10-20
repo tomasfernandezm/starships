@@ -1,6 +1,6 @@
 package edu.austral.model.entities.weapons;
 
-import edu.austral.model.Constants;
+import edu.austral.Constants;
 import edu.austral.model.Player;
 import edu.austral.model.entities.Shot;
 import edu.austral.model.entities.Starship;

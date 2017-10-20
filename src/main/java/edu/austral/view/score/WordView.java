@@ -1,0 +1,28 @@
+package edu.austral.view.score;
+
+import edu.austral.view.Drawable;
+import org.classpath.icedtea.pulseaudio.PulseAudioMixerProvider;
+import processing.core.PApplet;
+import processing.core.PConstants;
+
+public class WordView{
+
+    public final int x;
+    public final int y;
+    public final int width;
+    public final int height;
+
+    WordView(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    public void render(PApplet sketch, String word){
+        sketch.pushMatrix();
+        sketch.textAlign(PConstants.CENTER);
+        sketch.text(word, x, y, width, height);
+        sketch.popMatrix();
+    }
+}

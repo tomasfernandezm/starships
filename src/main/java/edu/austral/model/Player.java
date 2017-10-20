@@ -27,6 +27,10 @@ public class Player {
         return ship.isAlive();
     }
 
+    public int getScore(){
+        return score;
+    }
+
     public void addToScore(int toAdd){
         score += toAdd;
     }

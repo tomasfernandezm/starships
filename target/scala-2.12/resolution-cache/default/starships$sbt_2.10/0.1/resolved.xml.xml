@@ -4,7 +4,7 @@
 		module="starships$sbt_2.10"
 		revision="0.1"
 		status="integration"
-		publication="20171018124413"
+		publication="20171020094812"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

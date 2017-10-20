@@ -18,11 +18,11 @@ public abstract class Entity implements Collisionable<Entity>, Observable{
     Vector2 direction;
     float directionAngle = 0;
     final float speed;
-    float life;
+    public int life;
     private EntityEnum type;
     private List<EntityObserver> observerList = new ArrayList<>();
 
-    Entity(float life, Vector2 position, Vector2 direction, float speed, EntityEnum type) {
+    Entity(int life, Vector2 position, Vector2 direction, float speed, EntityEnum type) {
         this.position = position;
         this.direction = direction;
         this.speed = speed;

@@ -1,12 +1,8 @@
 package edu.austral.util;
 
-import edu.austral.model.Constants;
-import edu.austral.util.generator.Generator;
 import edu.austral.util.generator.PositionPlayerGenerator;
 import org.junit.Test;
 
-import java.awt.*;
-import java.awt.geom.Rectangle2D;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;

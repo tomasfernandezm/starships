@@ -1,6 +1,6 @@
 package edu.austral.util.generator;
 
-import edu.austral.model.Constants;
+import edu.austral.Constants;
 import edu.austral.util.Vector2;
 
 import java.awt.*;
