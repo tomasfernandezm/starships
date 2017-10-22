@@ -46,7 +46,7 @@ public class PlayerController {
     }
 
     public void createPlayer(String name, int playerNumber, Vector2 position) {
-        Starship ship = new Starship(10000, position, new Vector2(0, -1), 10);
+        Starship ship = new Starship(100, position, new Vector2(0, -1), 10);
         System.out.println(position.x() + " | " + position.y());
         player = new Player(name, playerNumber, ship, this);
         ship.player = player;
@@ -81,5 +81,9 @@ public class PlayerController {
             GameController gameController = GameController.INSTANCE;
             gameController.shotController.shotFired(shots);
         });
+    }
+
+    public boolean playerIsAlive(){
+        return player.isAlive();
     }
 }

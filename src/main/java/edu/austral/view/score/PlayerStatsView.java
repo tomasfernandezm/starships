@@ -27,9 +27,10 @@ public class PlayerStatsView{
     }
 
     public void render(PApplet sketch){
-        if(!player.isAlive()) sketch.stroke(127);
-        name.render(sketch, player.name);
-        life.render(sketch, String.valueOf(player.getShip().life));
-        score.render(sketch, String.valueOf(player.getScore()));
+        int rgb = 255;
+        if(!player.isAlive()) rgb = 120;
+        name.render(sketch, player.name, rgb);
+        life.render(sketch, String.valueOf(player.getShip().life), rgb);
+        score.render(sketch, String.valueOf(player.getScore()), rgb);
     }
 }

@@ -7,8 +7,12 @@ import edu.austral.view.score.PlayerStatsHeader;
 import edu.austral.view.score.PlayerStatsRenderer;
 import edu.austral.view.score.WordView;
 import processing.core.PApplet;
+import processing.core.PImage;
 
 import java.util.*;
+
+import static edu.austral.Constants.MAP_HEIGHT;
+import static edu.austral.Constants.MAP_WIDTH;
 
 public class View {
 
@@ -43,6 +47,12 @@ public class View {
         for(DrawableEntity d: drawableEntities){
             d.render(sketch);
         }
+        playerStatsRenderer.render(sketch);
+    }
+
+    public void displayGameOver(PApplet sketch) {
+        PImage gameOver = sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/gameOver.png");
+        sketch.image(gameOver, MAP_WIDTH/2 - gameOver.width/2, MAP_HEIGHT/2 - gameOver.height/2);
         playerStatsRenderer.render(sketch);
     }
 }

@@ -20,7 +20,12 @@ public class WordView{
     }
 
     public void render(PApplet sketch, String word){
+        render(sketch, word, 255);
+    }
+
+    public void render(PApplet sketch, String word, int rgb){
         sketch.pushMatrix();
+        sketch.fill(rgb);
         sketch.textAlign(PConstants.CENTER);
         sketch.text(word, x, y, width, height);
         sketch.popMatrix();

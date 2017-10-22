@@ -95,14 +95,25 @@ public class GameController extends GameFramework {
     }
 
     @Override public void draw(float time, PApplet graphics) {
-        view.render(graphics);
-        game.iterate();
-        levelController.operate();
+        if(allPlayersAlive()) {
+            view.render(graphics);
+            game.iterate();
+            levelController.operate();
+        }else{
+            view.displayGameOver(graphics);
+        }
     }
 
     @Override public void keyPressed(KeyEvent event) {
         for(PlayerController p: playerControllers){
             p.keyPressed(event);
         }
+    }
+
+    public boolean allPlayersAlive(){
+        for(PlayerController pc: playerControllers){
+            if(!pc.playerIsAlive()) return false;
+        }
+        return true;
     }
 }
