@@ -1,19 +1,19 @@
 package edu.austral.util;
 
-import edu.austral.util.generator.BoundaryVectorGenerator;
+import edu.austral.util.generator.BoundaryPositionGenerator;
 import org.junit.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
-public class BoundaryVectorGeneratorTest{
+public class BoundaryPositionGeneratorTest {
 
     int yLength = 10;
     int xLength = 10;
 
     @Test
     public void testListVectorGeneration(){
-        BoundaryVectorGenerator bvg = new BoundaryVectorGenerator();
+        BoundaryPositionGenerator bvg = new BoundaryPositionGenerator();
         List<Vector2> list = bvg.generate(10, xLength, yLength);
         for(Vector2 v: list){
             boolean result = isTopLimit(v) || isRightLimit(v) || isLeftLimit(v) || isBottomLimit(v);

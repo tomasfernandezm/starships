@@ -14,7 +14,7 @@ public class LevelController {
 
     private View view;
     private EntitySpawner<Asteroid> asteroidSpawner = new AsteroidSpawner(2000, 40, 20);
-    private EntitySpawner<FWeapon> weaponSpawner = new FWeaponSpawner(10000);
+    private EntitySpawner<FWeapon> weaponSpawner = new FWeaponSpawner(1000);
 
     public LevelController(View view){
         this.view = view;

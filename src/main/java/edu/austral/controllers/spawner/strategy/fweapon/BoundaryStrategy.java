@@ -35,11 +35,11 @@ public class BoundaryStrategy implements FWeaponSpawnStrategy{
         Vector2 position = positionGenerator.generate(xLimit, yLimit);
         Vector2 direction = directionGenerator.generate(xLimit, yLimit);
         Weapon weapon = map.get(getRandomEnum()).get();
-        return new FWeapon(FWEAPON_LIFE,position, direction, FWEAPON_SPEED);
+        return new FWeapon(FWEAPON_LIFE,position, direction, FWEAPON_SPEED, weapon);
     }
 
     private EntityEnum getRandomEnum(){
-        int option = random.nextInt(weaponEnums.size());
+        int option = (int) Math.floor(random.nextInt(weaponEnums.size()));
         return weaponEnums.get(option);
     }
 
