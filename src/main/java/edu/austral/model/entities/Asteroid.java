@@ -16,9 +16,8 @@ public class Asteroid extends Entity {
 
     @Override
     public void collisionedWith(Entity collisionable) {
-        if(!collisionable.getType().equals(EntityEnum.ASTEROID)){
-            super.collisionedWith(collisionable);
-        }
+        if(!collisionable.getType().equals(EntityEnum.ASTEROID)) super.collisionedWith(collisionable);
+        else direction = direction.$times(-1);
     }
 
     @Override
