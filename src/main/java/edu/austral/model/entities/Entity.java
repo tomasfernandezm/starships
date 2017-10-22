@@ -56,17 +56,15 @@ public abstract class Entity implements Collisionable<Entity>{
     }
 
     public void move(){
-        if(this.getType().equals(STARSHIP)){
-            System.out.println("AAAA");
-        }
+        position = position.$plus(direction.$times(speed));
+        moveShape();
+    }
+
+    public void moveShape(){
         AffineTransform affineTransform = new AffineTransform();
         affineTransform.setToIdentity();
-        position = position.$plus(direction.$times(speed));
         affineTransform.translate(direction.x()*speed, direction.y()*speed);
         shape = affineTransform.createTransformedShape(shape).getBounds2D();
-        if(this.getType().equals(STARSHIP)){
-            System.out.println(shape.getBounds().x + " | " + shape.getBounds().y);
-        }
     }
 
     public boolean isAlive(){

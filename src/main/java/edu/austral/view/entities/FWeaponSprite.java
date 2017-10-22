@@ -8,7 +8,7 @@ import processing.core.PImage;
 
 public class FWeaponSprite extends EntitySprite{
 
-    public FWeaponSprite(Entity entity) {
+    public FWeaponSprite(FWeapon entity) {
         super(entity);
     }
 

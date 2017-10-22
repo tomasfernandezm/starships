@@ -9,7 +9,6 @@ import edu.austral.controllers.configuration.lifter.ConfigLifter;
 import edu.austral.controllers.configuration.lifter.GameConfigurationLifter;
 import edu.austral.controllers.configuration.lifter.KeyConfigurationLifter;
 import edu.austral.model.Game;
-import edu.austral.model.Player;
 import edu.austral.util.Vector2;
 import edu.austral.util.generator.Generator;
 import edu.austral.util.generator.PositionPlayerGenerator;
@@ -26,7 +25,6 @@ public class GameController extends GameFramework {
     }
 
     private List<PlayerController> playerControllers = new ArrayList<>();
-    private List<Player> players = new ArrayList<>();
     public ShotController shotController = new ShotController();
     public View view = new View();
     private Game game = Game.getINSTANCE();
@@ -110,7 +108,7 @@ public class GameController extends GameFramework {
         }
     }
 
-    public boolean allPlayersAlive(){
+    private boolean allPlayersAlive(){
         for(PlayerController pc: playerControllers){
             if(!pc.playerIsAlive()) return false;
         }

@@ -12,7 +12,7 @@ import java.util.Optional;
 public abstract class Weapon {
 
     int capacity;
-    Timer timer = new Timer(Constants.SHOOT_INTERVAL);
+    private Timer timer = new Timer(Constants.SHOOT_INTERVAL);
 
     Weapon(int capacity) {
         this.capacity = capacity;

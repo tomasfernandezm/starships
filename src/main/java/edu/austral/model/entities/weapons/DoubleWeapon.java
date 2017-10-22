@@ -12,7 +12,6 @@ public class DoubleWeapon extends Weapon{
 
     public DoubleWeapon() {
         super(200);
-        timer.restart();
     }
 
     @Override

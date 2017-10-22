@@ -1,5 +1,6 @@
 package edu.austral.view.entities;
 
+import edu.austral.model.entities.Asteroid;
 import edu.austral.model.entities.Entity;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -7,7 +8,7 @@ import processing.core.PImage;
 
 public class AsteroidSprite extends EntitySprite{
 
-    public AsteroidSprite(Entity entity) {
+    public AsteroidSprite(Asteroid entity) {
         super(entity);
     }
 

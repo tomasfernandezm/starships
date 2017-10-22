@@ -8,12 +8,11 @@ import static edu.austral.Constants.*;
 
 public abstract class GameFramework extends PApplet {
 
-    PImage backgroundImage;
-    PImage gameOver;
+    private PImage backgroundImage;
+
     @Override public void settings() {
         size(VIEW_WIDTH, VIEW_HEIGHT);
         backgroundImage = loadImage("/home/toams/facultad/starships/src/main/resources/images/space.jpg");
-        gameOver = loadImage("/home/toams/facultad/starships/src/main/resources/images/gameOver.png");
     }
 
     @Override public void setup() {

@@ -1,13 +1,14 @@
 package edu.austral.view.entities;
 
 import edu.austral.model.entities.Entity;
+import edu.austral.model.entities.Starship;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class StarshipSprite extends EntitySprite {
 
 
-    public StarshipSprite(Entity entity) {
+    public StarshipSprite(Starship entity) {
         super(entity);
     }
 

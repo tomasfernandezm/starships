@@ -9,6 +9,9 @@ public class Constants {
     public static int SHOT_WIDTH = 10;
     public static int SHOT_HEIGHT = 10;
 
+    public static int FWEAPON_HEIGHT = 30;
+    public static int FWEAPON_WIDTH = 30;
+
     public static int STARSHIP_WIDTH = 50;
     public static int STARSHIP_HEIGHT = 50;
 
@@ -22,5 +25,5 @@ public class Constants {
     public static int STATS_TABLE_RIGHT_PADDING = 10;
     public static int STATS_TABLE_TOP_PADDING = 10;
     public static int STATS_TABLE_BOTTOM_PADDING = 10;
-    public static int STATS_TABLE_HEIGHT = 100;
+    public static int STATS_TABLE_ROW_HEIGHT = 40;
 }
