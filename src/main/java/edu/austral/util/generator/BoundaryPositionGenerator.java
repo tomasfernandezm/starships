@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BoundaryVectorGenerator implements Generator<Vector2>{
+public class BoundaryPositionGenerator implements Generator<Vector2>{
 
     private Random random = new Random();
 

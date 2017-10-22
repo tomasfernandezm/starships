@@ -40,18 +40,8 @@ public class GameController extends GameFramework {
         setKeyConfigurations();
         checkAmountOfPlayersWithAmountOfKeys();
         createPlayers();
-        setupGame();
-        startGame();
         game.addView(view);
-        levelController = new LevelController();
-    }
-
-    private void setupGame(){
-
-    }
-
-    private void startGame(){
-
+        levelController = new LevelController(view);
     }
 
     private void createPlayers(){

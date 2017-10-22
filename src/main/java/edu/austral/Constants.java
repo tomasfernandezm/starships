@@ -11,6 +11,8 @@ public class Constants {
 
     public static int FWEAPON_HEIGHT = 30;
     public static int FWEAPON_WIDTH = 30;
+    public static int FWEAPON_LIFE = 10;
+    public static int FWEAPON_SPEED = 1;
 
     public static int STARSHIP_WIDTH = 50;
     public static int STARSHIP_HEIGHT = 50;
