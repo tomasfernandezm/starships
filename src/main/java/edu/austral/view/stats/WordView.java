@@ -1,4 +1,4 @@
-package edu.austral.view.score;
+package edu.austral.view.stats;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
