@@ -3,13 +3,13 @@ package edu.austral.view;
 import edu.austral.model.Player;
 import edu.austral.model.entities.Entity;
 import edu.austral.view.entities.DrawableEntity;
-import edu.austral.view.score.PlayerStatsHeader;
 import edu.austral.view.score.PlayerStatsRenderer;
-import edu.austral.view.score.WordView;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static edu.austral.Constants.MAP_HEIGHT;
 import static edu.austral.Constants.MAP_WIDTH;

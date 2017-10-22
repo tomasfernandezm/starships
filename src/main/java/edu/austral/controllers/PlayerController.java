@@ -7,13 +7,10 @@ import edu.austral.model.Game;
 import edu.austral.model.Player;
 import edu.austral.model.entities.Starship;
 import edu.austral.util.Vector2;
-import edu.austral.util.generator.Generator;
-import edu.austral.util.generator.RandomVectorGenerator;
 import edu.austral.view.entities.StarshipSprite;
 import processing.event.KeyEvent;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static edu.austral.controllers.configuration.EnumAction.*;
@@ -48,7 +45,7 @@ public class PlayerController {
     public void createPlayer(String name, int playerNumber, Vector2 position) {
         Starship ship = new Starship(100, position, new Vector2(0, -1), 10);
         System.out.println(position.x() + " | " + position.y());
-        player = new Player(name, playerNumber, ship, this);
+        player = new Player(name, ship, this);
         ship.player = player;
         GameController gameController = GameController.INSTANCE;
         Game.getINSTANCE().addEntity(ship);

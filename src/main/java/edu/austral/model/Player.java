@@ -10,14 +10,12 @@ import java.util.Optional;
 public class Player {
 
     public final String name;
-    private final int number;
     private int score = 0;
     private Starship ship;
-    public PlayerController playerController;
+    PlayerController playerController;
 
-    public Player(String name, int number, Starship spaceship, PlayerController playerController) {
+    public Player(String name, Starship spaceship, PlayerController playerController) {
         this.name = name;
-        this.number = number;
         this.ship = spaceship;
         this.playerController = playerController;
     }

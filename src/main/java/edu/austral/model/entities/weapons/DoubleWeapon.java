@@ -22,7 +22,6 @@ public class DoubleWeapon extends Weapon{
         Vector2 shipPosition = starship.getPosition();
         Vector2 shipDirection = starship.getDirection();
         int shipHeght = starship.getShape().getBounds().height;
-        int shipWidth = starship.getShape().getBounds().width;
         Vector2 bulletPosition1 = shipPosition.$plus(shipDirection.rotate(-100).$times(shipHeght));
         Vector2 bulletPosition2 = shipPosition.$plus(shipDirection.rotate(100).$times(shipHeght));
         result.add(new Shot(bulletPosition1, shipDirection, player));

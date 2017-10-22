@@ -8,7 +8,7 @@ public class Map {
     private final int xLength;
     private final int yLength;
 
-    public Map(int xLength, int yLength) {
+    Map(int xLength, int yLength) {
         this.xLength = xLength;
         this.yLength = yLength;
     }

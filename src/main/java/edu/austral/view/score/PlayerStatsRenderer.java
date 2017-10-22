@@ -1,8 +1,6 @@
 package edu.austral.view.score;
 
-import edu.austral.Constants;
 import edu.austral.model.Player;
-import org.classpath.icedtea.pulseaudio.PulseAudioMixerProvider;
 import processing.core.PApplet;
 
 import java.util.ArrayList;

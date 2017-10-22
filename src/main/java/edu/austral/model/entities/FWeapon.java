@@ -4,7 +4,6 @@ import edu.austral.model.entities.weapons.StandardWeapon;
 import edu.austral.model.entities.weapons.Weapon;
 import edu.austral.util.Vector2;
 
-import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class FWeapon extends Entity {
@@ -30,7 +29,7 @@ public class FWeapon extends Entity {
         else super.collisionedWith(collisionable);
     }
 
-    public Weapon getWeapon() {
+    Weapon getWeapon() {
         return weapon;
     }
 }

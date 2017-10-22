@@ -11,8 +11,7 @@ import java.util.Optional;
 
 public abstract class Weapon {
 
-    private final double shotInterval = Constants.SHOOT_INTERVAL;
-    protected int capacity;
+    int capacity;
     Timer timer = new Timer(Constants.SHOOT_INTERVAL);
 
     Weapon(int capacity) {
@@ -21,16 +20,16 @@ public abstract class Weapon {
 
     public abstract List<Shot> shootW(Player player, Starship starship);
 
-    public Optional<List<Shot>> shoot(Player player, Starship starship){ ;
+    public Optional<List<Shot>> shoot(Player player, Starship starship){
         if(canShoot()) {
             Optional<List<Shot>> listOptional = Optional.of(shootW(player, starship));
             timer.restart();
             return listOptional;
         }
         else return Optional.empty();
-    };
+    }
 
-    public boolean canShoot(){
+    private boolean canShoot(){
         return hasCapacity() && timer.canOperate();
     }
 

@@ -1,6 +1,5 @@
 package edu.austral.view;
 
-import com.jogamp.common.util.ArrayHashMap;
 import edu.austral.model.entities.EntityEnum;
 import processing.core.PApplet;
 import processing.core.PImage;

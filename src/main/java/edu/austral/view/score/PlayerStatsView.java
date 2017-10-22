@@ -1,7 +1,6 @@
 package edu.austral.view.score;
 
 import edu.austral.model.Player;
-import edu.austral.view.Drawable;
 import processing.core.PApplet;
 
 public class PlayerStatsView{

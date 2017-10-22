@@ -1,7 +1,5 @@
 package edu.austral.view.score;
 
-import edu.austral.view.Drawable;
-import org.classpath.icedtea.pulseaudio.PulseAudioMixerProvider;
 import processing.core.PApplet;
 import processing.core.PConstants;
 

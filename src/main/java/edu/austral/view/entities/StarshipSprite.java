@@ -1,10 +1,6 @@
 package edu.austral.view.entities;
 
-import edu.austral.GameFramework;
 import edu.austral.model.entities.Entity;
-import edu.austral.model.entities.Starship;
-import edu.austral.util.Vector2;
-import edu.austral.view.ImageContainer;
 import processing.core.PApplet;
 import processing.core.PImage;
 

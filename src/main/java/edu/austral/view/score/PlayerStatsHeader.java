@@ -1,8 +1,6 @@
 package edu.austral.view.score;
 
-import edu.austral.view.Drawable;
 import processing.core.PApplet;
-import processing.data.Table;
 
 public class PlayerStatsHeader{
 

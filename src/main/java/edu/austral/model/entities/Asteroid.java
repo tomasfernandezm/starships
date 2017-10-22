@@ -2,7 +2,6 @@ package edu.austral.model.entities;
 
 import edu.austral.util.Vector2;
 
-import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class Asteroid extends Entity {
@@ -13,10 +12,6 @@ public class Asteroid extends Entity {
         super((int) size, position, direction, speed, EntityEnum.ASTEROID);
         this.shape = new Ellipse2D.Float(position.x(), position.y(), size, size);
         this.size = size;
-    }
-
-    public float getSize() {
-        return size;
     }
 
     @Override

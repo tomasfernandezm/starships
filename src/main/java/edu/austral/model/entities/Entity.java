@@ -1,15 +1,10 @@
 package edu.austral.model.entities;
 
-import edu.austral.model.EntityObserver;
-import edu.austral.model.Observable;
 import edu.austral.util.Collisionable;
 import edu.austral.util.Vector2;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observer;
 
 import static edu.austral.model.entities.EntityEnum.SHOT;
 import static edu.austral.model.entities.EntityEnum.STARSHIP;

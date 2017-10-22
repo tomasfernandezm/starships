@@ -3,7 +3,6 @@ package edu.austral.controllers;
 import edu.austral.GameController;
 import edu.austral.model.Game;
 import edu.austral.model.entities.Asteroid;
-import edu.austral.model.entities.Entity;
 import edu.austral.model.entities.FWeapon;
 import edu.austral.util.Timer;
 import edu.austral.util.Vector2;
@@ -13,11 +12,7 @@ import edu.austral.util.generator.Generator;
 import edu.austral.view.View;
 import edu.austral.view.entities.AsteroidSprite;
 import edu.austral.view.entities.FWeaponSprite;
-import org.apache.commons.math3.distribution.AbstractRealDistribution;
-import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.NormalDistribution;
 
-import java.util.List;
 import java.util.Random;
 
 public class LevelController {

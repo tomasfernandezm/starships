@@ -1,10 +1,5 @@
 package edu.austral;
 
-import edu.austral.controllers.configuration.EnumAction;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class Constants {
 
     public static int SHOOT_INTERVAL = 100;

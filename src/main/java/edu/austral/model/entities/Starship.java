@@ -2,8 +2,6 @@ package edu.austral.model.entities;
 
 import edu.austral.Constants;
 import edu.austral.model.Player;
-import edu.austral.model.entities.weapons.DoubleWeapon;
-import edu.austral.model.entities.weapons.StandardWeapon;
 import edu.austral.model.entities.weapons.TripleWeapon;
 import edu.austral.model.entities.weapons.Weapon;
 import edu.austral.util.Vector2;

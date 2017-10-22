@@ -2,7 +2,6 @@ package edu.austral.model;
 
 import edu.austral.Constants;
 import edu.austral.model.entities.Entity;
-import edu.austral.model.entities.EntityEnum;
 import edu.austral.util.CollisionEngine;
 import edu.austral.view.View;
 import scala.collection.JavaConverters;
@@ -10,7 +9,6 @@ import scala.collection.JavaConverters;
 import java.util.ArrayList;
 import java.util.List;
 
-import static edu.austral.model.entities.EntityEnum.FWEAPON;
 import static edu.austral.model.entities.EntityEnum.STARSHIP;
 
 public class Game {
