@@ -24,9 +24,8 @@ public class AsteroidSprite extends EntitySprite{
 
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
-        sketch.ellipseMode(PConstants.CENTER);
-        sketch.ellipse(0, 0, entityHeight, entityWidth);
-        // sketch.image(image, -entityHeight/2,-entityWidth/2, entityHeight, entityWidth);
+        sketch.ellipseMode(PConstants.CENTER);;
+        sketch.image(image, 0,0, entityHeight, entityWidth);
         sketch.popMatrix();
     }
 }

@@ -2,7 +2,9 @@ package edu.austral.model.entities;
 
 import edu.austral.Constants;
 import edu.austral.model.Player;
+import edu.austral.model.entities.weapons.DoubleWeapon;
 import edu.austral.model.entities.weapons.StandardWeapon;
+import edu.austral.model.entities.weapons.TripleWeapon;
 import edu.austral.model.entities.weapons.Weapon;
 import edu.austral.util.Vector2;
 
@@ -20,7 +22,7 @@ public class Starship extends Entity {
     public Starship(int life, Vector2 position, Vector2 direction, float speed) {
         super(life, position, direction, speed, EntityEnum.STARSHIP);
         this.shape = new Rectangle2D.Float(position.x() - Constants.STARSHIP_WIDTH/2, position.y() - Constants.STARSHIP_HEIGHT/2, Constants.STARSHIP_HEIGHT, Constants.STARSHIP_WIDTH);
-        this.weapon = new StandardWeapon();
+        this.weapon = new TripleWeapon();
         this.collisionDamage = life/10;
     }
 
