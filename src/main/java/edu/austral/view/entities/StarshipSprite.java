@@ -18,11 +18,16 @@ public class StarshipSprite extends EntitySprite {
         float entityHeight = entity.getShape().getBounds().height;
         float positionX = entity.getPosition().x();
         float positionY = entity.getPosition().y();
-        PImage image = sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/starship.png");
+        PImage image = getImage(sketch);
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
         sketch.rotate(PApplet.radians(entity.getDirectionAngle()));
         sketch.image(image, -entityHeight/2,-entityWidth/2, entityHeight, entityWidth);
         sketch.popMatrix();
+    }
+
+    @Override
+    public PImage getImage(PApplet sketch) {
+        return sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/starship.png");
     }
 }

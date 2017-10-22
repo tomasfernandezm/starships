@@ -2,6 +2,8 @@ package edu.austral.view.entities;
 
 import edu.austral.model.entities.Entity;
 import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.core.PImage;
 
 public abstract class EntitySprite implements DrawableEntity {
 
@@ -16,5 +18,20 @@ public abstract class EntitySprite implements DrawableEntity {
     }
 
     @Override
-    public abstract void render(PApplet sketch);
+    public void render(PApplet sketch){
+        float entityWidth = entity.getShape().getBounds().width;
+        float entityHeight = entity.getShape().getBounds().height;
+        float positionX = entity.getPosition().x();
+        float positionY = entity.getPosition().y();
+
+        PImage image = getImage(sketch);
+
+        sketch.pushMatrix();
+        sketch.translate(positionX, positionY);
+        sketch.ellipseMode(PConstants.CENTER);
+        sketch.image(image, 0,0, entityHeight, entityWidth);
+        sketch.popMatrix();
+    }
+
+    public abstract PImage getImage(PApplet sketch);
 }

@@ -3,7 +3,7 @@ package edu.austral.view;
 import edu.austral.model.Player;
 import edu.austral.model.entities.Entity;
 import edu.austral.view.entities.DrawableEntity;
-import edu.austral.view.score.PlayerStatsRenderer;
+import edu.austral.view.stats.StatsRenderer;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -17,7 +17,7 @@ import static edu.austral.Constants.MAP_WIDTH;
 public class View {
 
     private final List<DrawableEntity> drawableEntities = new ArrayList<>();
-    private final PlayerStatsRenderer playerStatsRenderer = new PlayerStatsRenderer();
+    private final StatsRenderer statsRenderer = new StatsRenderer();
 
     public View(){
 
@@ -28,7 +28,7 @@ public class View {
     }
 
     public void add(Player player){
-        playerStatsRenderer.addPlayerStats(player);
+        statsRenderer.addPlayerStats(player);
     }
 
     public void remove(Entity entity){
@@ -47,12 +47,12 @@ public class View {
         for(DrawableEntity d: drawableEntities){
             d.render(sketch);
         }
-        playerStatsRenderer.render(sketch);
+        statsRenderer.render(sketch);
     }
 
     public void displayGameOver(PApplet sketch) {
         PImage gameOver = sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/gameOver.png");
         sketch.image(gameOver, MAP_WIDTH/2 - gameOver.width/2, MAP_HEIGHT/2 - gameOver.height/2);
-        playerStatsRenderer.render(sketch);
+        statsRenderer.render(sketch);
     }
 }
