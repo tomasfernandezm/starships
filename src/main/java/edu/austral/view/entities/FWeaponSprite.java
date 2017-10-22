@@ -14,6 +14,6 @@ public class FWeaponSprite extends EntitySprite{
 
     @Override
     public PImage getImage(PApplet sketch) {
-        return sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/weapon.png");
+        return sketch.loadImage("src/main/resources/images/weapon.png");
     }
 }

@@ -51,7 +51,7 @@ public class View {
     }
 
     public void displayGameOver(PApplet sketch) {
-        PImage gameOver = sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/gameOver.png");
+        PImage gameOver = sketch.loadImage("src/main/resources/images/gameOver.png");
         sketch.image(gameOver, MAP_WIDTH/2 - gameOver.width/2, MAP_HEIGHT/2 - gameOver.height/2);
         statsRenderer.render(sketch);
     }

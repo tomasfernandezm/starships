@@ -14,6 +14,6 @@ public class AsteroidSprite extends EntitySprite{
 
     @Override
     public PImage getImage(PApplet sketch) {
-        return sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/alien.png");
+        return sketch.loadImage("src/main/resources/images/alien.png");
     }
 }

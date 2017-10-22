@@ -13,6 +13,6 @@ public class ShotSprite extends EntitySprite{
 
     @Override
     public PImage getImage(PApplet sketch) {
-        return sketch.loadImage("/home/toams/facultad/starships/src/main/resources/images/shot.png");
+        return sketch.loadImage("src/main/resources/images/shot.png");
     }
 }
