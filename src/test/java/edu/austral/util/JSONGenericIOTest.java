@@ -28,31 +28,17 @@ public class JSONGenericIOTest {
         list.add(pair1);
         list.add(pair2);
 
-        String path = "/home/toams/facultad/starships/src/test/resources";
+        String path = "src/main/resources/config/keyConfig.json";
 
-        Gson gson = new Gson();
-        Type genericType = new TypeToken<List<Pair>>() {}.getType();
-        String json = gson.toJson(list, genericType);
-        try{
-            FileWriter writer = new FileWriter(path + "/" + "pairs.json");
-            writer.write(json);
-            writer.close();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        List<Pair> result;
-        try {
-            JsonReader jsonReader = new JsonReader(new FileReader(path + "/" + "pairs.json"));
-            Type typeToken = new TypeToken<List<Pair>>() {
-            }.getType();
-            result = gson.fromJson(jsonReader, typeToken);
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-            throw new RuntimeException("There was an error loading the configuration file");
-        }
+        JSONGenericWriter<Pair> jsonGenericWriter = new JSONGenericWriter<>();
+        jsonGenericWriter.write(list, path, "pairs2.json");
+
+        JSONGenericParser<Pair> jsonGenericParser = new JSONGenericParser<>();
+        List<Pair> result = jsonGenericParser.read(path +  "/" + "pairs2.json");
         assertThat(result).isNotNull();
         assertThat(result).hasSize(2);
-        assertThat(result.get(0).x).isEqualTo(list.get(0).x);
+        int a = result.get(0).x;
+        assertThat(((Pair) result.get(0)).x).isEqualTo(list.get(0).x);
         assertThat(result.get(0).y).isEqualTo(list.get(0).y);
     }
 

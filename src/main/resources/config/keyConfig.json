@@ -1,1 +1,1 @@
-[{"actionMap":{"97":"FORWARD","98":"BACKWARDS"}}]
+[{"actionMap":{"39":"ROTATE_COUNTERCLOCKWISE","38":"FORWARD","37":"ROTATE_CLOCKWISE", "40":"BACKWARDS", "83":"SHOOT" }}]
