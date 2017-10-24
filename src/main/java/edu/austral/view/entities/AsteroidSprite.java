@@ -1,5 +1,6 @@
 package edu.austral.view.entities;
 
+import edu.austral.GameFramework;
 import edu.austral.model.entities.Asteroid;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -11,7 +12,7 @@ public class AsteroidSprite extends EntitySprite{
     }
 
     @Override
-    public PImage getImage(PApplet sketch) {
-        return sketch.loadImage("src/main/resources/images/alien.png");
+    public PImage getImage() {
+        return GameFramework.asteroidImage;
     }
 }

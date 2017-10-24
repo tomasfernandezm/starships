@@ -8,15 +8,26 @@ import static edu.austral.Constants.*;
 
 public abstract class GameFramework extends PApplet {
 
-    private PImage backgroundImage;
+    public static PImage backgroundImage;
+    public static PImage gameOverImage;
+    public static PImage shotImage;
+    public static PImage weaponImage;
+    public static PImage shipImage;
+    public static PImage asteroidImage;
 
     @Override public void settings() {
         size(VIEW_WIDTH, VIEW_HEIGHT);
-        backgroundImage = loadImage("src/main/resources/images/space.jpg");
     }
 
     @Override public void setup() {
         clear();
+        backgroundImage = loadImage("src/main/resources/images/space.jpg");
+        gameOverImage = loadImage("src/main/resources/images/gameOver.png");
+        shotImage = loadImage("src/main/resources/images/shot.png");
+        weaponImage = loadImage("src/main/resources/images/weapon.png");
+        shipImage = loadImage("src/main/resources/images/starship.png");
+        asteroidImage = loadImage("src/main/resources/images/alien.png");
+
     }
 
     @Override public void draw() {

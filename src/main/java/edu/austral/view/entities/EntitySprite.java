@@ -24,7 +24,7 @@ public abstract class EntitySprite implements DrawableEntity {
         float positionX = entity.getPosition().x();
         float positionY = entity.getPosition().y();
 
-        PImage image = getImage(sketch);
+        PImage image = getImage();
 
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
@@ -34,5 +34,5 @@ public abstract class EntitySprite implements DrawableEntity {
         sketch.imageMode(PConstants.CORNER);
     }
 
-    public abstract PImage getImage(PApplet sketch);
+    public abstract PImage getImage();
 }

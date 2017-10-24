@@ -1,5 +1,6 @@
 package edu.austral.view.entities;
 
+import edu.austral.GameFramework;
 import edu.austral.model.entities.Starship;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -18,7 +19,7 @@ public class StarshipSprite extends EntitySprite {
         float entityHeight = entity.getShape().getBounds().height;
         float positionX = entity.getPosition().x();
         float positionY = entity.getPosition().y();
-        PImage image = getImage(sketch);
+        PImage image = getImage();
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
         sketch.rotate(PApplet.radians(entity.getDirectionAngle()));
@@ -27,7 +28,7 @@ public class StarshipSprite extends EntitySprite {
     }
 
     @Override
-    public PImage getImage(PApplet sketch) {
-        return sketch.loadImage("src/main/resources/images/starship.png");
+    public PImage getImage() {
+        return GameFramework.shipImage;
     }
 }
