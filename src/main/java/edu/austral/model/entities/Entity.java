@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 import static edu.austral.model.entities.EntityEnum.SHOT;
-import static edu.austral.model.entities.EntityEnum.STARSHIP;
 
 public abstract class Entity implements Collisionable<Entity>{
 

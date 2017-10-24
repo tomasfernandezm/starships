@@ -1,6 +1,5 @@
 package edu.austral.view.entities;
 
-import edu.austral.model.entities.Entity;
 import edu.austral.model.entities.Starship;
 import processing.core.PApplet;
 import processing.core.PImage;

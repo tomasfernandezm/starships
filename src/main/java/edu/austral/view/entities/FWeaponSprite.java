@@ -1,7 +1,5 @@
 package edu.austral.view.entities;
 
-import edu.austral.model.entities.Asteroid;
-import edu.austral.model.entities.Entity;
 import edu.austral.model.entities.FWeapon;
 import processing.core.PApplet;
 import processing.core.PImage;

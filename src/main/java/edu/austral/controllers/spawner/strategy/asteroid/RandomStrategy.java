@@ -4,7 +4,6 @@ import edu.austral.model.entities.Asteroid;
 import edu.austral.util.Vector2;
 import edu.austral.util.generator.Generator;
 import edu.austral.util.generator.RandomVectorGenerator;
-import sun.java2d.loops.GeneralRenderer;
 
 import java.util.Random;
 

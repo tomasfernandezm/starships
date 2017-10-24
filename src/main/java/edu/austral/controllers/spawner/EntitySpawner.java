@@ -3,7 +3,6 @@ package edu.austral.controllers.spawner;
 import edu.austral.Constants;
 import edu.austral.model.entities.Entity;
 import edu.austral.util.Timer;
-import edu.austral.util.generator.Generator;
 
 import java.util.Random;
 

@@ -89,10 +89,12 @@ public class GameController extends GameFramework {
             levelController.operate();
         }else{
             view.displayGameOver(graphics);
+            stop();
         }
     }
 
     @Override public void keyPressed(KeyEvent event) {
+        System.out.println(event.getKeyCode());
         for(PlayerController p: playerControllers){
             p.keyPressed(event);
         }

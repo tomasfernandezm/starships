@@ -3,6 +3,7 @@ package edu.austral.util;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import edu.austral.controllers.configuration.GameConfiguration;
 import edu.austral.util.json.JSONGenericParser;
 import edu.austral.util.json.JSONGenericWriter;
 import org.junit.Test;
@@ -21,25 +22,23 @@ public class JSONGenericIOTest {
 
     @Test
     public void testJson(){
-        Pair pair1 = new Pair(5, 5);
-        Pair pair2 = new Pair(1, 1);
+        GameConfiguration gameConfig = new GameConfiguration();
+        gameConfig.playerNames.put(1, "Tomas");
+        gameConfig.playerNames.put(2, "Nico");
 
-        List<Pair> list = new ArrayList<>();
-        list.add(pair1);
-        list.add(pair2);
+        Gson gson = new Gson();
+        String json = gson.toJson(gameConfig);
 
-        String path = "src/main/resources/config/keyConfig.json";
+        try{
+            FileWriter writer = new FileWriter("/home/toams/facultad/starships/src/main/resources/config/gameConfig.json");
+            writer.write(json);
+            writer.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
 
-        JSONGenericWriter<Pair> jsonGenericWriter = new JSONGenericWriter<>();
-        jsonGenericWriter.write(list, path, "pairs2.json");
-
-        JSONGenericParser<Pair> jsonGenericParser = new JSONGenericParser<>();
-        List<Pair> result = jsonGenericParser.read(path +  "/" + "pairs2.json");
-        assertThat(result).isNotNull();
-        assertThat(result).hasSize(2);
-        int a = result.get(0).x;
-        assertThat(((Pair) result.get(0)).x).isEqualTo(list.get(0).x);
-        assertThat(result.get(0).y).isEqualTo(list.get(0).y);
+        GameConfiguration result = gson.fromJson(json, GameConfiguration.class);
+        assertThat(result.playerNames).hasSize(2);
     }
 
     class Pair implements Comparable<Pair>{

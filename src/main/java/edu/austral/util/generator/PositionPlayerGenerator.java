@@ -43,7 +43,7 @@ public class PositionPlayerGenerator implements Generator<Vector2>{
         while(i < list.size()){
             Shape aux = new Rectangle2D.Float(list.get(i).x(), list.get(i).y(), Constants.STARSHIP_HEIGHT, Constants.STARSHIP_WIDTH);
             boolean collides = collides(shape, aux);
-            if(!collides) return true;
+            if(collides){ return true; }
             i += 1;
         }
         return false;

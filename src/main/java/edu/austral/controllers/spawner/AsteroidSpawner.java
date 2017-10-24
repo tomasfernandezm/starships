@@ -3,10 +3,7 @@ package edu.austral.controllers.spawner;
 import edu.austral.controllers.spawner.strategy.asteroid.AsteroidSpawnStrategy;
 import edu.austral.controllers.spawner.strategy.asteroid.BoundaryStrategy;
 import edu.austral.model.entities.Asteroid;
-import edu.austral.model.entities.Entity;
 import edu.austral.util.Timer;
-import edu.austral.util.Vector2;
-import edu.austral.view.entities.AsteroidSprite;
 
 public class AsteroidSpawner extends EntitySpawner<Asteroid>{
 

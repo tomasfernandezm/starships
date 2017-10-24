@@ -1,13 +1,11 @@
 package edu.austral.model.entities;
 
-import edu.austral.Constants;
 import edu.austral.model.Player;
 import edu.austral.util.Vector2;
 
 import java.awt.geom.Rectangle2D;
 
 import static edu.austral.Constants.*;
-import static edu.austral.Constants.SHOT_WIDTH;
 
 public class Shot extends Entity{
 

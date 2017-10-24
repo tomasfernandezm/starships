@@ -3,19 +3,12 @@ package edu.austral.controllers.configuration.lifter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import edu.austral.controllers.configuration.EnumAction;
 import edu.austral.controllers.configuration.KeyConfiguration;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import static edu.austral.controllers.configuration.EnumAction.*;
-import static edu.austral.controllers.configuration.EnumAction.ROTATE_COUNTERCLOCKWISE;
 
 public class KeyConfigurationLifter implements ConfigLifter<List<KeyConfiguration>> {
 
