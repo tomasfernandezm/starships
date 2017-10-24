@@ -12,7 +12,7 @@ public class Player {
     public final String name;
     private int score = 0;
     private Starship ship;
-    PlayerController playerController;
+    private PlayerController playerController;
 
     public Player(String name, Starship spaceship, PlayerController playerController) {
         this.name = name;

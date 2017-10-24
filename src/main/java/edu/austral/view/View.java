@@ -1,5 +1,6 @@
 package edu.austral.view;
 
+import edu.austral.GameFramework;
 import edu.austral.model.Player;
 import edu.austral.model.entities.Entity;
 import edu.austral.view.entities.DrawableEntity;
@@ -51,7 +52,7 @@ public class View {
     }
 
     public void displayGameOver(PApplet sketch) {
-        PImage gameOver = sketch.loadImage("src/main/resources/images/gameOver.png");
+        PImage gameOver = GameFramework.gameOverImage;
         sketch.image(gameOver, MAP_WIDTH/2 - gameOver.width/2, MAP_HEIGHT/2 - gameOver.height/2);
         statsRenderer.render(sketch);
     }
