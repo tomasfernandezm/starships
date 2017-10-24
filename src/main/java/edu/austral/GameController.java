@@ -83,7 +83,7 @@ public class GameController extends GameFramework {
     }
 
     @Override public void draw(float time, PApplet graphics) {
-        if(allPlayersAlive()) {
+        if(atLeastOnePlayerAlive()) {
             view.render(graphics);
             game.iterate();
             levelController.operate();
@@ -100,10 +100,10 @@ public class GameController extends GameFramework {
         }
     }
 
-    private boolean allPlayersAlive(){
+    private boolean atLeastOnePlayerAlive(){
         for(PlayerController pc: playerControllers){
-            if(!pc.playerIsAlive()) return false;
+            if(pc.playerIsAlive()) return true;
         }
-        return true;
+        return false;
     }
 }

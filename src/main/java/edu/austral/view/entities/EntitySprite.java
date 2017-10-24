@@ -28,9 +28,10 @@ public abstract class EntitySprite implements DrawableEntity {
 
         sketch.pushMatrix();
         sketch.translate(positionX, positionY);
-        sketch.ellipseMode(PConstants.CENTER);
+        sketch.imageMode(PConstants.CENTER);
         sketch.image(image, 0,0, entityHeight, entityWidth);
         sketch.popMatrix();
+        sketch.imageMode(PConstants.CORNER);
     }
 
     public abstract PImage getImage(PApplet sketch);
